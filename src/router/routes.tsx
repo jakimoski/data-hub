@@ -13,19 +13,19 @@ import FaqsPage from "../pages/FAQs/FaqsPage";
 
 export const routes = createBrowserRouter([
   {
-    path: "/data-hub/",
+    path: "/data-hub",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
-      { path: "catalogs", element: <Catalogs /> },
-      { path: "my-profile", element: <MyProfile /> },
-      { path: "about", element: <About /> },
-      { path: "product/:id", element: <ProductPage /> },
-      { path: "faq", element: <FaqsPage /> },
-      { path: "best-deals", element: <BestDeals /> },
-      { path: "filters", element: <Filters /> },
-      { path: "category/:name", element: <ProductListing /> },
+      { path: "/catalogs", element: <Catalogs /> },
+      { path: "/my-profile", element: <MyProfile /> },
+      { path: "/about", element: <About /> },
+      { path: "/product/:id", element: <ProductPage /> },
+      { path: "/faq", element: <FaqsPage /> },
+      { path: "/best-deals", element: <BestDeals /> },
+      { path: "/filters", element: <Filters /> },
+      { path: "/category/:name", element: <ProductListing /> },
     ],
   },
 ]);
