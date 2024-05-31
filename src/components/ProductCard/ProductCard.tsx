@@ -9,6 +9,7 @@ import heartBlack from "../../assets/icons/heart-black.png";
 import bellBlack from "../../assets/icons/bell-black.png";
 import bellYellow from "../../assets/icons/bell-yelow.png";
 import { priceWatchActions } from "../../store/price-watch-slice";
+import { truncateText } from "../../utils/helpers";
 
 type ProductCardProps = {
   product: Product;
@@ -61,23 +62,28 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`} className="product-card__link">
-        <div className="product-card__image-wrapper">
-          <img
-            className="product-card__image"
-            src={`/products-img/${product.image}.png`}
-            alt="Avatar"
-          />
-          <p className="product-card__sale">
-            <span>10%</span>
-          </p>
+        <div>
+          <div className="product-card__image-wrapper">
+            <img
+              className="product-card__image"
+              // src={`/products-img/${product.imageUrl}.png`}
+              src={product.imageUrl}
+              alt="Avatar"
+            />
+            <p className="product-card__sale">
+              <span>10%</span>
+            </p>
+          </div>
+          <h4 className="product-card__name">
+            {truncateText(product.productName, 25)}{" "}
+          </h4>
         </div>
 
         <div className="product-card__container">
-          <h4 className="product-card__name">{product.name} </h4>
-          <p className="small">{product.sore_num} ден.</p>
+          <p className="small">{product.regularPrice} ден.</p>
           <div className="d-flex">
             <div>
-              <p>{product.price} ден.</p>
+              <p>{product.discountedPrice} ден.</p>
             </div>
             <div className="product-card__rating">
               <button>

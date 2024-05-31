@@ -3,7 +3,6 @@ import Banner from "../../components/Banner/Banner";
 import Carousel from "../../components/Carousel/ProductsCarousel";
 import Hero from "../../components/Hero/Hero";
 import Partners from "../../components/Partners/Partners";
-
 import { products } from "../../data/data";
 import SectionBlock from "../../components/Section/SectionBlock";
 

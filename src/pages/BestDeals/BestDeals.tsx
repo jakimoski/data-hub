@@ -1,36 +1,43 @@
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
 import Filters from "../../components/Filters/Filters";
+import MainButton from "../../components/MainButton/MainButton";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { products } from "../../data/data";
 
 export default function BestDeals() {
   return (
-    <section className="products-wrapper">
-      <h1 className="products-wrapper__title"></h1>
+    <section className="product-listing grid-page-aside ">
+      <section className="product-listing__main">
+        <section className="product-listing__top">
+          <div className="product-listing__breadcrumbs">
+            <a href="/">Почетна</a> <span>/</span>
+            <a href="/best-deals"></a>
+          </div>
+          <div className="product-listing__title">
+            <h2 className="page-title">Најдобри зделки</h2>
+          </div>
+          <div className="product-listing__sort">
+            <MainButton>Подреди по популарност</MainButton>
+          </div>
+        </section>
+        <section className="product-listing__products">
+          <div className="product-listing__products-filters">
+            <Filters />
+          </div>
+          <section className="product-listing__products-items">
+            {products &&
+              products.map((product) => (
+                <ProductCard key={product?.id} product={product} />
+              ))}
+          </section>
+        </section>
+      </section>
+
+      <section className="product-listing__aside">
+        <div>
+          <AsideBanner />
+        </div>
+      </section>
     </section>
   );
 }
-
-<div className="best-deals">
-  <div className="best-deals-nav">
-    <a href="/">Почетна</a> <span>/</span>{" "}
-    <a href="/best-deals">Најдобри зделки</a>
-  </div>
-  <div>
-    <h2>Најдобри зделки</h2>
-  </div>
-  <div className="best-deals-buttons"></div>
-  <div className="best-deals-products">
-    <div className="best-deals-filter">
-      <Filters />
-    </div>
-    <div className="best-deals-items">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
-    <div className="best-deals-aside">
-      <AsideBanner />
-    </div>
-  </div>
-</div>;

@@ -10,7 +10,7 @@ import { useState } from "react";
 import "./product-listing.scss";
 
 export default function ProductListing() {
-  const { name } = useParams<{ name: string }>();
+  const { name } = useParams() as { name: string };
   const [anchorEl, setAnchorEl] = useState(null);
 
   const category = categories.find(
@@ -26,9 +26,11 @@ export default function ProductListing() {
     setAnchorEl(null);
   };
 
-  const currentProducts = products.filter(
-    (product) => product.category === name
+  const currentProducts = products.filter((product) =>
+    product.categories.includes("КОМПЈУТЕРИ И ГЕЈМИНГ")
   );
+
+  console.log(currentProducts);
 
   if (!category) {
     return <div>Category not found</div>;
@@ -39,7 +41,7 @@ export default function ProductListing() {
       <section className="product-listing__main">
         <section className="product-listing__top">
           <div className="product-listing__breadcrumbs">
-            <a href="/">Почетна</a> <span>/</span>{" "}
+            <a href="/">Почетна</a> <span>/</span>
             <a href="/best-deals">{category.name}</a>
           </div>
           <div className="product-listing__title">
@@ -83,7 +85,7 @@ export default function ProductListing() {
           <section className="product-listing__products-items">
             {currentProducts &&
               currentProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product?.id} product={product} />
               ))}
           </section>
         </section>

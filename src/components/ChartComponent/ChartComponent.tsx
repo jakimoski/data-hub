@@ -94,10 +94,10 @@ const ChartComponent = () => {
               y2="456.733"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFA500" stop-opacity="1" />
-              <stop offset="0.455" stop-color="#FFA500" stop-opacity="1" />
-              <stop offset="0.755" stop-color="#FFA500" stop-opacity="0.1" />
-              <stop offset="0.855" stop-color="#FFA500" stop-opacity="0" />
+              <stop stopColor="#FFA500" stopOpacity="1" />
+              <stop offset="0.455" stopColor="#FFA500" stopOpacity="1" />
+              <stop offset="0.755" stopColor="#FFA500" stopOpacity="0.1" />
+              <stop offset="0.855" stopColor="#FFA500" stopOpacity="0" />
             </linearGradient>
           </defs>
 

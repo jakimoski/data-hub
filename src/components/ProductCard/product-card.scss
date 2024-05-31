@@ -5,7 +5,9 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: $color-white;
   border-radius: 10px;
+  // margin: 10px;
   margin: 10px;
+  height: 100%;
   position: relative;
   padding: 10px;
   transition: all 0.3s ease-in-out;
@@ -18,6 +20,11 @@
 
   &__link {
     color: $color-black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
   }
 
   &__image-wrapper {
@@ -38,8 +45,10 @@
 
   &__name {
     margin-top: 10px;
-    font-size: 1.2rem;
-    min-height: 3.3rem;
+    font-size: 1.1rem;
+    @include screenSize(laptop) {
+      font-size: 1rem;
+    }
   }
 
   &__icon {

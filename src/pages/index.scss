@@ -3,5 +3,4 @@
 @forward "./BestDeals/best-deals.scss";
 @forward "./Catalogs/cataloges.scss";
 @forward "./MyProfile/my-profile.scss";
-@forward "./ProductPage/product-page.scss";
-@forward "./ProductListing/product-listing.scss";
+@import "./ProductPage/product-page.scss";

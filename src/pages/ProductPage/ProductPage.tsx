@@ -9,6 +9,8 @@ export default function ProductPage() {
 
   const product = products.find((product) => product.id === +productId);
 
+  console.log(product);
+
   if (!product) {
     return <div>Product not found</div>;
   }

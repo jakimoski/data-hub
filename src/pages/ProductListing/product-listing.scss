@@ -51,7 +51,7 @@
 
   &__products-items {
     display: grid;
-    gap: rem-calc(5);
+    gap: rem-calc(15);
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: max-content;
     background-color: $color-gray;

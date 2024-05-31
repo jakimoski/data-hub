@@ -1,7 +1,7 @@
 @use "../../css/abstracts/" as *;
 @use "sass:math";
 
-.product-info {
+.product-overview {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas: "img img details details details";

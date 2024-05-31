@@ -60,7 +60,7 @@ export default function ProductImageCard({ product }: ProductCardProps) {
   return (
     <div
       className="product-card--image-card"
-      style={{ backgroundImage: `url(/products-img/${product.image}.png)` }}
+      style={{ backgroundImage: `url(${product.imageUrl})` }}
     >
       <button
         className="product-card__icon product-card__icon--bell"
