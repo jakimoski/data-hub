@@ -40,7 +40,7 @@ export default function Home() {
       <Banner
         title="Новиот Lenovo лаптоп ги руши сите рекорди"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo cupiditate in repellat. Quod, obcaecati?"
-        backgroundImage="/backgrounds/62.png"
+        backgroundImage="./backgrounds/62.png"
       />
 
       <div className="bg-grey">
@@ -55,7 +55,7 @@ export default function Home() {
       <Banner
         title="Паметни телефони за паметни луѓе"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo cupiditate in repellat. Quod, obcaecati?"
-        backgroundImage="/backgrounds/63.png"
+        backgroundImage="./backgrounds/63.png"
       />
       <Partners />
     </>
