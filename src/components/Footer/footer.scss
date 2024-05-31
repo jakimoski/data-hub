@@ -1,0 +1,137 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.footer {
+  @extend %section;
+  width: 100%;
+  background-color: $bg-dark;
+  color: $color-white;
+
+  .wrapper {
+    @extend %wrap;
+
+    .newsletter {
+      text-align: center;
+      padding-bottom: ($gutter-base * 2);
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: inline-flex;
+      width: 60%;
+      padding-top: $gutter-base;
+
+      @include screenSize(tablet) {
+        width: 100%;
+      }
+
+      input[type="email"] {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        padding-right: 40px;
+        border: none;
+        border-radius: 100px;
+      }
+
+      button {
+        position: absolute;
+        right: 0;
+        top: $gutter-base;
+        border: none;
+        background-color: transparent;
+        padding: 10px;
+
+        cursor: pointer;
+      }
+    }
+
+    hr {
+      border: 1px solid $hr-color;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      padding-top: $gutter-base;
+      @include screenSize(tablet) {
+        flex-direction: column-reverse;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        p {
+          margin-left: ($gutter-base * 2);
+          width: 70%;
+          @include screenSize(tablet) {
+            margin-left: 0;
+            width: 100%;
+          }
+        }
+
+        @include screenSize(tablet) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      .logo {
+        width: rem-calc(130);
+        @include screenSize(tablet) {
+          width: rem-calc(50);
+        }
+      }
+    }
+
+    // Se mi izgleda ogromno, ne mozam da se snajdam so
+    // tipografijata
+
+    h3 {
+      font-size: $heading-size-tiny;
+    }
+
+    .footer-column {
+      h3 {
+        font-size: $heading-size-small;
+      }
+      a {
+        display: block;
+        color: $color-white;
+        padding: 5px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      text-align: left;
+      margin-right: ($gutter-base * 2);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-start;
+      padding-top: $gutter-base;
+      @include screenSize(tablet) {
+        flex-direction: column;
+        padding-top: 0;
+      }
+    }
+
+    .social-media {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: $gutter-base;
+      @include screenSize(tablet) {
+        flex-direction: column-reverse;
+      }
+
+      .social {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}

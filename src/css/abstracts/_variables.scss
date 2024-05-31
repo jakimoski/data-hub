@@ -1,0 +1,51 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base: "Montserrat", sans-serif;
+$font-size-small: rem-calc(12);
+$font-size-base: rem-calc(16);
+$font-size-medium: rem-calc(20);
+$font-size-big: rem-calc(22);
+$font-size-bigger: rem-calc(24);
+$font-size-large: rem-calc(32);
+// Headings sizes
+$heading-size-tiny: rem-calc(16);
+$heading-size-small: rem-calc(22);
+$heading-size-base: rem-calc(24);
+$heading-size-medium: rem-calc(40);
+$heading-size-big: rem-calc(46);
+$heading-size-bigger: rem-calc(64);
+$heading-size-large: rem-calc(96);
+
+$line-height-base: 1.5;
+$line-height-small: 1;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+
+// Size settings
+$gutter-s: rem-calc(10);
+$gutter-base: rem-calc(30);
+$gutter-l: rem-calc(50);
+
+// Border settings
+$border-radius: 4px;
+$border-radius-m: 10px;
+$border-radius-l: 20px;
+$border-radius-xl: 30px;
+
+// Color settings
+$color-black: #000;
+$color-white: #fff;
+$color-yellow: #ffa500;
+$color-green: #669850;
+$color-dark-green: #556b2f;
+$color-gray: #f6f6f6;
+$color-dark-gray: #9a9a9a;
+$hr-color: #cacaca94;
+$bg-dark: #1a1a1a;

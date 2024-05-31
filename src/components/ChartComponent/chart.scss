@@ -1,0 +1,26 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.chart__btn {
+  border-radius: 10px;
+  border: 1px solid #929292;
+  padding: 10px 35px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-gray;
+    box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.2);
+  }
+}
+
+.cart__actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+}

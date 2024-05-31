@@ -1,0 +1,27 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.hero-section {
+  &__content {
+    padding: ($gutter-base * 3);
+    border-radius: 0 0 rem-calc(30) rem-calc(30);
+    background: url("/backgrounds/heroBg.jpg") no-repeat center center/cover;
+    width: 95%;
+    height: 60svh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    span {
+      color: $color-yellow;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+  }
+
+  &__search {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}

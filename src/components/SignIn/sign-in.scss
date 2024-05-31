@@ -1,0 +1,122 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.sign-in {
+  display: flex;
+  text-align: center;
+
+  &__form {
+    padding: rem-calc(30);
+    width: 50%;
+    margin: 0 auto;
+    @include screenSize(tablet) {
+      width: 100%;
+    }
+  }
+
+  &__video {
+    width: 40%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    @include screenSize(tablet) {
+      display: none;
+    }
+    #video {
+      width: 35vw;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.form {
+  &__row {
+    width: 70%;
+    padding-bottom: rem-calc(30);
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    @include screenSize(laptop) {
+      width: 90%;
+    }
+    @include screenSize(tablet) {
+      width: 100%;
+    }
+  }
+
+  & input:not([type="checkbox"]) {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 24px;
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
+
+  & input:focus-visible {
+    outline: 1px solid $color-yellow;
+    border: 1px solid transparent;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    width: 15px;
+  }
+}
+
+.social-btn {
+  border-radius: 10px;
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  color: #fff;
+  width: 70%;
+  margin: 15px auto;
+  font-family: "Open Sans";
+  font-size: 16px;
+  cursor: pointer;
+  @include screenSize(tablet) {
+    width: 100%;
+  }
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 4px rgba($color: #000000, $alpha: 0.4);
+  }
+
+  &__facebook {
+    background: #3d5a98;
+  }
+
+  &__google {
+    color: #000;
+    border: 1.186px solid #a8a8a8;
+  }
+
+  &__submit {
+    background-color: #000;
+  }
+}
+
+.separator {
+  margin-block: 15px;
+}
+
+.sign-in-link {
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

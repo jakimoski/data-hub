@@ -1,0 +1,206 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.categories {
+  position: fixed;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "all sub sub sub sub sub";
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  top: 10vh;
+  left: 0;
+  overflow-y: auto;
+
+  @include screenSize(tablet) {
+    grid-template-areas: "all all all all all all";
+    padding-top: 1rem;
+  }
+
+  &__search {
+    display: none;
+    @include screenSize(tablet) {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      & .input-wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  &__all {
+    grid-area: all;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 5rem;
+    border-right: 1px solid $color-yellow;
+
+    @include screenSize(tablet) {
+      padding-top: 2rem;
+      margin: 1rem auto;
+      width: 90%;
+      border-right: none;
+    }
+
+    & span {
+      margin-bottom: 1rem;
+    }
+
+    & span:hover {
+      background-color: $color-gray;
+    }
+
+    &__item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 1rem;
+      padding: 10px 10px 10px 0;
+      background-color: transparent;
+      text-align: left;
+
+      & p {
+        font-family: "Open Sans";
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+        flex: 1;
+        line-height: 1.5;
+      }
+
+      @include screenSize(desktop-helper) {
+        margin-left: rem-calc(5);
+        gap: rem-calc(5);
+      }
+      @include screenSize(tablet) {
+        margin-left: rem-calc(5);
+        gap: rem-calc(25);
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 1;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      text-align: left;
+      margin-left: 0;
+      list-style: none;
+      & li {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      @include screenSize(tablet) {
+        display: block;
+      }
+    }
+  }
+  &__sub {
+    grid-area: sub;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include screenSize(tablet) {
+      display: none;
+    }
+
+    h2 {
+      margin-left: 1rem;
+      text-transform: capitalize;
+    }
+
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #f6f6f6;
+      height: 100%;
+      gap: 1rem;
+      padding-top: 1rem;
+      align-items: baseline;
+      overflow-y: auto;
+      height: 100%;
+      padding-bottom: 5rem;
+      @include screenSize(big-desktop) {
+        gap: rem-calc(10);
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.single-category-item {
+  flex-basis: 23%;
+  padding: rem-calc(10);
+  background-color: #fff;
+  border-radius: 15px;
+  align-self: stretch;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    font-family: "Open Sans";
+    font-size: rem-calc(16);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    text-wrap: pretty;
+    min-height: rem-calc(50);
+    margin-bottom: rem-calc(10);
+  }
+
+  &-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 24px;
+    background-color: white;
+    padding: 1rem;
+  }
+
+  &__link {
+    color: $color-black;
+    font-family: "Open Sans";
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--category {
+      color: $color-black;
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & ul {
+    list-style: none;
+  }
+}

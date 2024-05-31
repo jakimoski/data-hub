@@ -1,0 +1,43 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: $color-white;
+  border: 1px solid $color-yellow;
+  border-radius: 100px;
+  overflow: hidden;
+
+  & input[type="text"] {
+    display: inline-block;
+    width: 100%;
+    padding: rem-calc(10) rem-calc(40);
+    border: none;
+    outline: none;
+    font-size: rem-calc(16);
+    &::placeholder {
+      color: $color-dark-gray;
+      font-family: "Inter", sans-serif;
+      font-size: rem-calc(16);
+      font-weight: 400;
+    }
+  }
+
+  & button {
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+
+    &:hover svg path {
+      fill: $color-yellow;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.container-store {
+  background: $color-white;
+  border-radius: 16px;
+  margin-top: $gutter-base;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.merkur {
+  //   background-color: #ffde00;
+  //   color: #17a94e;
+}

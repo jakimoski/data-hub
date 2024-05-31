@@ -1,0 +1,11 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.product-page--product {
+  grid-area: main;
+}
+
+.product-page--aside {
+  grid-area: aside;
+  margin-top: 7rem;
+}

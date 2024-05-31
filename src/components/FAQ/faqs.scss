@@ -1,0 +1,23 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.faq {
+  &__wrapper {
+    background-color: $color-gray;
+  }
+  &__title {
+    @include title-2;
+    font-family: "Tahoma", sans-serif;
+    color: $color-yellow;
+  }
+
+  &__contact {
+    flex-direction: column;
+    gap: 1rem;
+
+    &__title {
+      @include title-2;
+      font-family: "Tahoma", sans-serif;
+    }
+  }
+}

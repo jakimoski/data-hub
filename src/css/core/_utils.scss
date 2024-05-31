@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+@use "sass:math";
+
+.grid-page-aside {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "main main main main main aside"
+    "bottom bottom bottom bottom bottom .";
+
+  @include screenSize(tablet) {
+    grid-template-areas:
+      "main main main main main main"
+      "bottom bottom bottom bottom bottom .";
+  }
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+
+  &--sb {
+    justify-content: space-between;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+.div-container {
+  padding: $gutter-base;
+  @include screenSize(tablet) {
+    padding: $gutter-s;
+  }
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.page-title {
+  @include page-title;
+  font-family: "Tahoma" sans-serif;
+  margin-bottom: $gutter-base;
+}
+
+.p-y-m {
+  padding-top: $gutter-base;
+  padding-bottom: $gutter-base;
+  @include screenSize(tablet) {
+    padding-top: $gutter-s;
+    padding-bottom: $gutter-s;
+  }
+}
+
+.p-y-s {
+  padding-top: $gutter-s;
+  padding-bottom: $gutter-s;
+}

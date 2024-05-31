@@ -1,0 +1,12 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.section {
+  @extend %section;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-block {
+  @extend %section;
+}

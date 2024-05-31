@@ -1,0 +1,10 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.carousel-products {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

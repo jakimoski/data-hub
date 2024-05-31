@@ -1,0 +1,16 @@
+.catalogs-page {
+  &__main {
+    grid-area: main;
+  }
+
+  &__aside {
+    grid-area: aside;
+    margin-top: 5rem;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

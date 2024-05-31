@@ -1,0 +1,47 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.filters {
+  margin-top: -2rem;
+
+  &__category {
+    margin-bottom: 2rem;
+
+    &__title {
+      margin-bottom: 1rem;
+      @include sub-title;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid $color-yellow;
+    transition: all 0.1s ease-in-out;
+  }
+
+  &__input:checked ~ &__indicator {
+    border: 5px solid $color-yellow;
+  }
+}

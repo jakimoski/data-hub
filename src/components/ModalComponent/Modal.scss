@@ -1,0 +1,72 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100svh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100svh;
+  z-index: 9999;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 90svh;
+  border-radius: 15px;
+  background-color: $color-white;
+  z-index: 999999;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include screenSize(laptop) {
+    width: 85vw;
+    margin-top: 1rem;
+  }
+  @include screenSize(tablet) {
+    width: 90vw;
+    margin-top: 1rem;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__close-btn {
+    position: absolute;
+    z-index: 1116;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 1rem;
+      height: 2rem;
+      width: 2px;
+      background-color: #333;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
