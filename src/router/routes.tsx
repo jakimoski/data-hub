@@ -13,7 +13,7 @@ import FaqsPage from "../pages/FAQs/FaqsPage";
 
 export const routes = createBrowserRouter([
   {
-    path: "/data-hub",
+    path: "/data-hub/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
