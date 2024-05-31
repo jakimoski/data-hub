@@ -17,7 +17,7 @@ export const routes = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
+      { path: "/data-hub", element: <Home /> },
       { path: "/catalogs", element: <Catalogs /> },
       { path: "/my-profile", element: <MyProfile /> },
       { path: "/about", element: <About /> },
