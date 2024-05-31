@@ -35,7 +35,7 @@ export default function Navbar() {
           >
             <span></span>
           </button>
-          <NavLink className="header__logo" to="/">
+          <NavLink className="header__logo" to="/data-hub">
             <img src={Logo} alt="Brainster-Logo" />
           </NavLink>
           <Link to={"/category/бела%20техника"} className="nav-search-link">
@@ -65,17 +65,17 @@ export default function Navbar() {
                 </button>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/catalogs">
+                <NavLink className="nav__list-link" to="/data-hub/catalogs">
                   Каталози
                 </NavLink>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/best-deals">
+                <NavLink className="nav__list-link" to="/data-hub/best-deals">
                   Најдобри зделки
                 </NavLink>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/about">
+                <NavLink className="nav__list-link" to="/data-hub/about">
                   За нас
                 </NavLink>
               </li>
