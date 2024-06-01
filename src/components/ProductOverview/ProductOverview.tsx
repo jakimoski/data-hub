@@ -7,6 +7,9 @@ import { useState } from "react";
 import ColorIcon from "../../assets/icons/drops.png";
 import SizeIcon from "../../assets/icons/size.png";
 import PinIcon from "../../assets/icons/pin.png";
+import pic1 from "../../assets/images/product-details/part1.png";
+import pic2 from "../../assets/images/product-details/part2.png";
+import pic3 from "../../assets/images/product-details/part3.png";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
@@ -24,9 +27,9 @@ function ProductOverview({ product }: { product: Product }) {
     <div className="product-overview">
       <div className="product-overview__images">
         <div className="product-overview__images__small">
-          <img src="./product-details/part1.png" alt="" />
-          <img src="./product-details/part2.png" alt="" />
-          <img src="./product-details/part3.png" alt="" />
+          <img src={pic1} alt="" />
+          <img src={pic2} alt="" />
+          <img src={pic3} alt="" />
         </div>
         <div className="product-overview__images__main">
           <ProductImageCard product={product} />
