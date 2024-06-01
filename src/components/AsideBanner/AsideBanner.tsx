@@ -1,6 +1,6 @@
-import image1 from "../../assets/images/ads-images/10993445535805353260 4.png";
-import image2 from "../../assets/images/ads-images/Rectangle 133.png";
-import image3 from "../../assets/images/ads-images/Rectangle 134.png";
+import image1 from "../../assets/ads-images/Rectangle 129.png";
+import image2 from "../../assets/ads-images/Rectangle 130.png";
+import image3 from "../../assets/ads-images/Rectangle 134.png";
 
 export default function AsideBanner() {
   return (
