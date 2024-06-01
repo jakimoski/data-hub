@@ -7,9 +7,9 @@ import { useState } from "react";
 import ColorIcon from "../../assets/icons/drops.png";
 import SizeIcon from "../../assets/icons/size.png";
 import PinIcon from "../../assets/icons/pin.png";
-import pic1 from "../../assets/images/product-details/part1.png";
-import pic2 from "../../assets/images/product-details/part2.png";
-import pic3 from "../../assets/images/product-details/part3.png";
+import pic1 from "../../assets/product-details/part1.png";
+import pic2 from "../../assets/product-details/part2.png";
+import pic3 from "../../assets/product-details/part3.png";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
