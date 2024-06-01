@@ -75,6 +75,16 @@ export default function ProductCard({ product }: ProductCardProps) {
     return discountPercentage;
   }
 
+  const totalStars = product?.reviews?.reduce(
+    (acc, review) => acc + review.stars,
+    0
+  );
+
+  const averageStars =
+    product.reviews && product.reviews.length > 0
+      ? totalStars ?? 0 / product.reviews.length
+      : 0;
+
   return (
     <div className="product-card">
       <Link
@@ -89,16 +99,17 @@ export default function ProductCard({ product }: ProductCardProps) {
               src={product.imageUrl}
               alt="Avatar"
             />
-            <p className="product-card__sale">
-              {product.discountedPrice > 0 && (
+
+            {product.discountedPrice > 0 && (
+              <p className="product-card__sale">
                 <span>
                   {calculateDiscountPercentage(
                     product.regularPrice,
                     product.discountedPrice
                   ).toString() + "%"}
                 </span>
-              )}
-            </p>
+              </p>
+            )}
           </div>
           <h4 className="product-card__name">
             {truncateText(product.productName, 25)}{" "}
@@ -106,10 +117,17 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="product-card__container">
-          <p className="small">{product.regularPrice} ден.</p>
+          {product.discountedPrice > 0 && (
+            <p className="small">{product.regularPrice} ден.</p>
+          )}
           <div className="d-flex">
             <div>
-              <p>{product.discountedPrice} ден.</p>
+              <p>
+                {product.discountedPrice > 0
+                  ? product.discountedPrice
+                  : product.regularPrice}{" "}
+                ден.
+              </p>
             </div>
             <div className="product-card__rating">
               <button>
@@ -126,7 +144,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                   />
                 </svg>
               </button>
-              0.0
+              {averageStars}
             </div>
           </div>
         </div>
