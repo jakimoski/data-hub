@@ -4,6 +4,9 @@ import MapComponent from "../MapComponent/MapComponent";
 import Modal from "../ModalComponent/Modal";
 import ProductImageCard from "../ProductCard/ProductImageCard";
 import { useState } from "react";
+import ColorIcon from "../../assets/icons/drops.png";
+import SizeIcon from "../../assets/icons/size.png";
+import PinIcon from "../../assets/icons/pin.png";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
@@ -21,9 +24,9 @@ function ProductOverview({ product }: { product: Product }) {
     <div className="product-overview">
       <div className="product-overview__images">
         <div className="product-overview__images__small">
-          <img src="../../../src/assets/product-details/part1.png" alt="" />
-          <img src="../../../src/assets/product-details/part2.png" alt="" />
-          <img src="../../../src/assets/product-details/part3.png" alt="" />
+          <img src="./product-details/part1.png" alt="" />
+          <img src="./product-details/part2.png" alt="" />
+          <img src="./product-details/part3.png" alt="" />
         </div>
         <div className="product-overview__images__main">
           <ProductImageCard product={product} />
@@ -64,18 +67,18 @@ function ProductOverview({ product }: { product: Product }) {
         </p>
         <div className="product-overview__customize">
           <button className="product-overview__customize__btn">
-            <img src="../../../src/assets/icons/drops.png" alt="" />
+            <img src={ColorIcon} alt="" />
             Боја
           </button>
           <button className="product-overview__customize__btn">
-            <img src="../../../src/assets/icons/size.png" alt="" />
+            <img src={SizeIcon} alt="" />
             Големина
           </button>
           <button
             onClick={() => setShowModal(true)}
             className="product-overview__customize__btn"
           >
-            <img src="../../../src/assets/icons/pin.png" alt="" />
+            <img src={PinIcon} alt="" />
             Близу до тебе
           </button>
           {showModal &&
