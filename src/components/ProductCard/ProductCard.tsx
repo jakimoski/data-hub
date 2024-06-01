@@ -59,6 +59,20 @@ export default function ProductCard({ product }: ProductCardProps) {
     setIsWatching((prev) => !prev);
   }
 
+  function calculateDiscountPercentage(
+    regularPrice: number,
+    discountPrice: number
+  ) {
+    if (regularPrice <= 0) {
+      throw new Error("Regular price must be greater than zero.");
+    }
+
+    const discountAmount = regularPrice - discountPrice;
+    const discountPercentage = (discountAmount / regularPrice) * 100;
+
+    return discountPercentage.toFixed(2); // Returns the percentage rounded to 2 decimal places
+  }
+
   return (
     <div className="product-card">
       <Link
@@ -74,7 +88,14 @@ export default function ProductCard({ product }: ProductCardProps) {
               alt="Avatar"
             />
             <p className="product-card__sale">
-              <span>10%</span>
+              {product.discountedPrice && (
+                <span>
+                  {calculateDiscountPercentage(
+                    product.regularPrice,
+                    product.discountedPrice
+                  ).toString() + "%"}
+                </span>
+              )}
             </p>
           </div>
           <h4 className="product-card__name">

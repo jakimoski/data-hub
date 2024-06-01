@@ -3,6 +3,17 @@ import Carousel from "../../components/Carousel/ProductsCarousel";
 import MainButton from "../../components/MainButton/MainButton";
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
 import ArrowIcon from "../../assets/icons/Arrow-top.png";
+import catlog1 from "../../assets/partners-image/Rectangle 127.png";
+import catlog2 from "../../assets/partners-image/Rectangle 128.png";
+import catlog3 from "../../assets/partners-image/Rectangle 129.png";
+import catlog4 from "../../assets/partners-image/Rectangle 130.png";
+import catlog5 from "../../assets/partners-image/Rectangle 131.png";
+
+import partner1 from "../../assets/partners-image/Rectangle 135.png";
+import partner2 from "../../assets/partners-image/Rectangle 136.png";
+import partner3 from "../../assets/partners-image/Frame 20023.png";
+import partner4 from "../../assets/partners-image/Frame 20024.png";
+import partner5 from "../../assets/partners-image/Frame 20025 copy.png";
 
 export default function Catalogs() {
   return (
@@ -19,36 +30,21 @@ export default function Catalogs() {
         </div>
 
         <div className="d-flex div-container">
-          <img src="src/assets/partners-image/Rectangle 127.png" alt="Neptun" />
-          <img src="src/assets/partners-image/Rectangle 128.png" alt="Neptun" />
-          <img src="src/assets/partners-image/Rectangle 129.png" alt="Neptun" />
-          <img src="src/assets/partners-image/Rectangle 130.png" alt="Neptun" />
-          <img src="src/assets/partners-image/Rectangle 131.png" alt="Neptun" />
+          <img src={catlog1} alt="Neptun" />
+          <img src={catlog2} alt="Neptun" />
+          <img src={catlog3} alt="Neptun" />
+          <img src={catlog4} alt="Neptun" />
+          <img src={catlog5} alt="Neptun" />
         </div>
 
         <div className="div-container">
           <h2 className="page-title">Популарни продавници</h2>
           <div className="d-flex d-flex--sb">
-            <img
-              src="src/assets/partners-image/Rectangle 135.png"
-              alt="Neptun"
-            />
-            <img
-              src="src/assets/partners-image/Rectangle 136.png"
-              alt="Neptun"
-            />
-            <img
-              src="src/assets/partners-image/Frame 20023.png"
-              alt="Mebel-VI"
-            />
-            <img
-              src="src/assets/partners-image/Frame 20024.png"
-              alt="TehnoMarket"
-            />
-            <img
-              src="src/assets/partners-image/Frame 20025 copy.png"
-              alt="Mr.Bricolage"
-            />
+            <img src={partner1} alt="Neptun" />
+            <img src={partner2} alt="Neptun" />
+            <img src={partner3} alt="Mebel-VI" />
+            <img src={partner4} alt="TehnoMarket" />
+            <img src={partner5} alt="Mr.Bricolage" />
           </div>
         </div>
 

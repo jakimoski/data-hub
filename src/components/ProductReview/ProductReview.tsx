@@ -75,10 +75,7 @@ export default function ProductReview() {
           </Grid>
           <Grid item xs={6}>
             <Box sx={{ display: "flex" }}>
-              <img
-                src="../../src/assets/about-images/Ellipse 126.png"
-                alt="Stefan"
-              />
+              <img src={user1} alt="Stefan" />
               <Box>
                 <Typography sx={{ marginX: "20px", fontSize: "30px" }}>
                   Стефан{" "}
@@ -109,7 +106,7 @@ export default function ProductReview() {
                 </Typography>
               </Box>
               <Box sx={{ marginLeft: "270px", marginTop: "15px" }}>
-                <img src={user1} alt="stars" />
+                <img src={stars} alt="stars" />
               </Box>
             </Box>
             <Box>
