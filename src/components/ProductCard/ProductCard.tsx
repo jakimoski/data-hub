@@ -68,9 +68,11 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
 
     const discountAmount = regularPrice - discountPrice;
-    const discountPercentage = (discountAmount / regularPrice) * 100;
+    const discountPercentage = Math.round(
+      (discountAmount / regularPrice) * 100
+    );
 
-    return discountPercentage.toFixed(2); // Returns the percentage rounded to 2 decimal places
+    return discountPercentage;
   }
 
   return (
@@ -88,7 +90,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               alt="Avatar"
             />
             <p className="product-card__sale">
-              {product.discountedPrice && (
+              {product.discountedPrice > 0 && (
                 <span>
                   {calculateDiscountPercentage(
                     product.regularPrice,

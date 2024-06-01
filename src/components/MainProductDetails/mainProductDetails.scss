@@ -13,7 +13,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "small main main main";
     height: auto;
-
     grid-area: img;
 
     &__small {
