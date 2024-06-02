@@ -4,7 +4,6 @@ import FilterHomeCard from "../FilterHomeCard/FilterHomeCard";
 import CategorryCard from "./CategorryCard";
 import Search from "../Search/Search";
 import { motion } from "framer-motion";
-import React from "react";
 
 export default function AllCategories() {
   const [currentCategory, setCurrentCategory] = useState("Обувки");
