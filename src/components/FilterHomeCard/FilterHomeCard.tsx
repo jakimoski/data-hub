@@ -25,7 +25,7 @@ export default function FilterHomeCard({ category, classes }: Props) {
 
   return (
     <Link
-      to={`/category/${category.name.toLowerCase()}`}
+      to={`data-hub/category/${category.name.toLowerCase()}`}
       className={classes}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
