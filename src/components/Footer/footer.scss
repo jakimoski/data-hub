@@ -13,13 +13,17 @@
     .newsletter {
       text-align: center;
       padding-bottom: ($gutter-base * 2);
+
+      p {
+        margin-bottom: $gutter-base;
+      }
     }
 
     .input-wrapper {
       position: relative;
       display: inline-flex;
       width: 60%;
-      padding-top: $gutter-base;
+      padding: ($gutter-base * 0.5) ($gutter-base);
 
       @include screenSize(tablet) {
         width: 100%;
@@ -36,12 +40,11 @@
 
       button {
         position: absolute;
-        right: 0;
-        top: $gutter-base;
+        right: $gutter-base;
         border: none;
         background-color: transparent;
         padding: 10px;
-
+        margin-right: 0;
         cursor: pointer;
       }
     }

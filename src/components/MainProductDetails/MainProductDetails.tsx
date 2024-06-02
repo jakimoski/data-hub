@@ -1,11 +1,19 @@
 import { Product } from "../../data/data";
 import Ad from "../AdComponent/Ad";
 import StoresComponent from "../StoresComponent/StoresComponent";
+// import StoresComponent from "../storesComponent/StoresComponent";
+// import TestCard from "../TestCard/TestCard";
 import ChartComponent from "../ChartComponent/ChartComponent";
 import ProductReview from "../ProductReview/ProductReview";
 
 import Experts from "../Experts/Experts";
 import ProductOverview from "../ProductOverview/ProductOverview";
+// import Review from "../Review/Review";
+// import { useState } from "react";
+// import Modal from "../ModalComponent/Modal";
+// import { createPortal } from "react-dom";
+// import ProductImageCard from "../ProductCard/ProductImageCard";
+// import Experts from "../experts/Experts";
 
 type Props = {
   product: Product;
@@ -17,22 +25,23 @@ export default function MainProductDetails({ product }: Props) {
       <div>Linkovi</div>
 
       <ProductOverview product={product} />
-      <p className="actions">
-        <span>Цени</span>
-        <span>Прегледи</span>
-        <span>Статистики</span>
-        <span>Информации за продуктот</span>
-      </p>
-      <Ad></Ad>
-      <StoresComponent />
-      <StoresComponent />
-      <StoresComponent />
-      <StoresComponent />
-      <div className="image-banner">
-        <img src="../../../src/assets/ads-images/image-banner.png" alt="" />
+      <div className="div-container main-product__ads">
+        <p className="actions">
+          <span>Цени</span>
+          <span>Прегледи</span>
+          <span>Статистики</span>
+          <span>Информации за продуктот</span>
+        </p>
+        <Ad></Ad>
+        <StoresComponent />
+        <StoresComponent />
+        <StoresComponent />
+        <StoresComponent />
+        <div className="image-banner">
+          <img src="../../../src/assets/ads-images/image-banner.png" alt="" />
+        </div>
+        <StoresComponent />
       </div>
-      <StoresComponent />
-      <hr className="separator-hr" />
 
       <div className="section">
         <Experts title="Експертите велат..." slidesToShow={3} />

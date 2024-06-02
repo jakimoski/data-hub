@@ -1,9 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 
-import stars from "../../assets/about-images/Frame 203.png";
-import user1 from "../../assets/about-images/Ellipse 127.png";
-
 export default function ProductReview() {
   return (
     <Box>
@@ -75,7 +72,10 @@ export default function ProductReview() {
           </Grid>
           <Grid item xs={6}>
             <Box sx={{ display: "flex" }}>
-              <img src={user1} alt="Stefan" />
+              <img
+                src="../../src/assets/about-images/Ellipse 126.png"
+                alt="Stefan"
+              />
               <Box>
                 <Typography sx={{ marginX: "20px", fontSize: "30px" }}>
                   Стефан{" "}
@@ -85,7 +85,10 @@ export default function ProductReview() {
                 </Typography>
               </Box>
               <Box sx={{ marginLeft: "270px", marginTop: "15px" }}>
-                <img src={stars} alt="stars" />
+                <img
+                  src="../../src/assets/about-images/Frame 203.png"
+                  alt="stars"
+                />
               </Box>
             </Box>
             <Box>
@@ -96,7 +99,10 @@ export default function ProductReview() {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", marginTop: "60px" }}>
-              <img src={user1} alt="Franjo" />
+              <img
+                src="../../src/assets/about-images/Ellipse 127.png"
+                alt="Franjo"
+              />
               <Box>
                 <Typography sx={{ marginX: "20px", fontSize: "30px" }}>
                   Фрањо{" "}
@@ -106,7 +112,10 @@ export default function ProductReview() {
                 </Typography>
               </Box>
               <Box sx={{ marginLeft: "270px", marginTop: "15px" }}>
-                <img src={stars} alt="stars" />
+                <img
+                  src="../../src/assets/about-images/Frame 204.png"
+                  alt="stars"
+                />
               </Box>
             </Box>
             <Box>

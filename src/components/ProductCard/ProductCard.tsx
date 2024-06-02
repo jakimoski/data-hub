@@ -87,10 +87,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="product-card">
-      <Link
-        to={`/data-hub/product/${product.id}`}
-        className="product-card__link"
-      >
+      <Link to={`/product/${product.id}`} className="product-card__link">
         <div>
           <div className="product-card__image-wrapper">
             <img

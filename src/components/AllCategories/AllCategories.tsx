@@ -3,6 +3,7 @@ import { categories, TSubCategories } from "../../data/data";
 import FilterHomeCard from "../FilterHomeCard/FilterHomeCard";
 import CategorryCard from "./CategorryCard";
 import Search from "../Search/Search";
+import { motion } from "framer-motion";
 
 export default function AllCategories() {
   const [currentCategory, setCurrentCategory] = useState("Обувки");
@@ -21,7 +22,13 @@ export default function AllCategories() {
   }, [currentCategory]);
 
   return (
-    <div className="categories">
+    <motion.div
+      className="categories"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="categories__all">
         <div className="categories__search">
           <Search />
@@ -65,6 +72,6 @@ export default function AllCategories() {
             ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

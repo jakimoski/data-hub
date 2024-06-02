@@ -2,14 +2,8 @@ import { createPortal } from "react-dom";
 import { Product } from "../../data/data";
 import MapComponent from "../MapComponent/MapComponent";
 import Modal from "../ModalComponent/Modal";
-import ProductImageCard from "../ProductCard/ProductImageCard";
 import { useState } from "react";
-import ColorIcon from "../../assets/icons/drops.png";
-import SizeIcon from "../../assets/icons/size.png";
-import PinIcon from "../../assets/icons/pin.png";
-import pic1 from "../../assets/product-details/part1.png";
-import pic2 from "../../assets/product-details/part2.png";
-import pic3 from "../../assets/product-details/part3.png";
+import ProductImages from "./ProductImages";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
@@ -25,16 +19,7 @@ function ProductOverview({ product }: { product: Product }) {
       : 0;
   return (
     <div className="product-overview">
-      <div className="product-overview__images">
-        <div className="product-overview__images__small">
-          <img src={pic1} alt="" />
-          <img src={pic2} alt="" />
-          <img src={pic3} alt="" />
-        </div>
-        <div className="product-overview__images__main">
-          <ProductImageCard product={product} />
-        </div>
-      </div>
+      <ProductImages product={product} />
 
       <div className="product-overview__details">
         <h1 className="product-overview__details__title">
@@ -70,18 +55,18 @@ function ProductOverview({ product }: { product: Product }) {
         </p>
         <div className="product-overview__customize">
           <button className="product-overview__customize__btn">
-            <img src={ColorIcon} alt="" />
+            <img src="../../../src/assets/icons/drops.png" alt="" />
             Боја
           </button>
           <button className="product-overview__customize__btn">
-            <img src={SizeIcon} alt="" />
+            <img src="../../../src/assets/icons/size.png" alt="" />
             Големина
           </button>
           <button
             onClick={() => setShowModal(true)}
             className="product-overview__customize__btn"
           >
-            <img src={PinIcon} alt="" />
+            <img src="../../../src/assets/icons/pin.png" alt="" />
             Близу до тебе
           </button>
           {showModal &&

@@ -13,7 +13,7 @@
   grid-template-areas: "all sub sub sub sub sub";
   padding-top: 1rem;
   padding-bottom: 3rem;
-  top: 10vh;
+  top: 7vh;
   left: 0;
   overflow-y: auto;
 
@@ -121,6 +121,7 @@
 
     h2 {
       margin-left: 1rem;
+      margin-top: 12px;
       text-transform: capitalize;
     }
 

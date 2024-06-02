@@ -1,0 +1,16 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    @include screenSize(laptop) {
+      font-size: 1rem;
+    }
+  }
+}

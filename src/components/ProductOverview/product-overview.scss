@@ -1,0 +1,199 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.product-overview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "img img details details details";
+  justify-content: flex-start;
+  padding-left: $gutter-base;
+  @include screenSize(tablet) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "details";
+  }
+  @include screenSize(phone) {
+    padding-left: $gutter-s;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "small main main main";
+    height: auto;
+    width: fit-content;
+    grid-area: img;
+
+    @include screenSize(laptop) {
+      //   grid-template-columns: 1fr;
+      grid-template-rows: min-content;
+      grid-template-areas:
+        "main main main main"
+        "small small small small";
+    }
+
+    &__small {
+      grid-area: small;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+      margin-inline: 5px;
+
+      @include screenSize(phone) {
+        display: none;
+      }
+
+      & .swiper {
+        height: 100%;
+        width: 100%;
+      }
+
+      & .swiper-wrapper {
+        display: flex;
+        min-width: 100%;
+        flex-direction: column;
+        min-width: 100% !important;
+
+        @include screenSize(laptop) {
+          flex-direction: row;
+          justify-content: center;
+          min-width: 100%;
+        }
+      }
+
+      & .swiper-slide {
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $color-black;
+        border-radius: 10px;
+        margin-block: 5px;
+        padding-bottom: 0;
+        cursor: pointer;
+        @include screenSize(laptop) {
+          flex-direction: row;
+          min-width: min-content;
+          max-width: fit-content;
+          height: fit-content;
+          margin-inline: 5px;
+        }
+      }
+
+      img {
+        object-fit: contain;
+        border-radius: 10px;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        @include screenSize(laptop) {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+
+    &__main {
+      grid-area: main;
+      height: 100%;
+      padding: 5px;
+
+      & .swiper {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+      }
+
+      & .product-card--image-card {
+        margin-inline: 1rem;
+        min-height: 250px;
+        max-height: 350px;
+
+        @include screenSize(laptop) {
+          margin-left: 15px;
+        }
+        @include screenSize(tablet) {
+          margin-inline: 1rem;
+          min-height: 300px;
+        }
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    grid-area: details;
+    flex-direction: column;
+
+    &__title {
+      @include product-title;
+    }
+
+    &__desc {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 1rem;
+
+    &__star {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &__btn {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+    }
+  }
+
+  &__customize {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    @include screenSize(laptop) {
+      gap: 1rem;
+    }
+    @include screenSize(laptop) {
+      //   justify-content: space-between;
+      gap: 5px;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 10px 15px;
+      width: fit-content;
+      cursor: pointer;
+      border-radius: 30px;
+      border: 1px solid $color-yellow;
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include screenSize(phone) {
+        img {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

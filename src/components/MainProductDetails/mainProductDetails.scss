@@ -1,117 +1,6 @@
 @use "../../css/abstracts/" as *;
 @use "sass:math";
 
-.product-overview {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "img img details details details";
-  gap: 1rem;
-  justify-content: flex-start;
-
-  &__images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "small main main main";
-    height: auto;
-    grid-area: img;
-
-    &__small {
-      grid-area: small;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      img {
-        object-fit: cover;
-        border-radius: 10px;
-        margin-right: 5px;
-      }
-    }
-
-    &__main {
-      grid-area: main;
-      height: 100%;
-    }
-  }
-
-  &__details {
-    display: flex;
-    grid-area: details;
-    flex-direction: column;
-    margin-right: 15%;
-
-    @include screenSize(desktop-helper) {
-      margin-right: 10%;
-    }
-    @include screenSize(laptop) {
-      margin-right: 5%;
-    }
-    @include screenSize(laptop) {
-      margin-right: 1%;
-    }
-
-    &__title {
-      @include product-title;
-    }
-
-    &__desc {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-  }
-
-  &__reviews {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-block: 1rem;
-
-    &__star {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    &__btn {
-      font-family: "Open Sans", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      text-align: center;
-      width: fit-content;
-    }
-  }
-
-  &__customize {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    &__btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 10px 15px;
-      width: fit-content;
-      cursor: pointer;
-      border-radius: 30px;
-      border: 1px solid $color-yellow;
-
-      & img {
-        width: 20px;
-        height: 20px;
-      }
-
-      @include screenSize(phone) {
-        width: 100px;
-        img {
-          padding-right: 5px;
-        }
-      }
-    }
-  }
-}
-
 // .customize {
 //   display: flex;
 //   justify-content: flex-start;
@@ -252,3 +141,13 @@
     }
   }
 }
+
+// .main-product__ads {
+//   padding-right: 10rem;
+//   @include screenSize(laptop) {
+//     padding-right: 5rem;
+//   }
+//   @include screenSize(tablet) {
+//     padding-right: 1rem;
+//   }
+// }
