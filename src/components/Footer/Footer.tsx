@@ -57,9 +57,9 @@ export default function Footer() {
             <div className="footer-column">
               <h3>Корисни линкови </h3>
               <ul>
-                <Link to={"/about"}>За нас</Link>
-                <Link to={"/faq"}>ЧПП</Link>
-                <Link to={"/best-deals"}>Најдобри зделки</Link>
+                <Link to={"/data-hub/about"}>За нас</Link>
+                <Link to={"/data-hub/faq"}>ЧПП</Link>
+                <Link to={"/data-hub/best-deals"}>Најдобри зделки</Link>
               </ul>
             </div>
             <div className="footer-column">
