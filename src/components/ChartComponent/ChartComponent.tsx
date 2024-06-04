@@ -8,6 +8,8 @@ import {
   AreaChart,
   Area,
 } from "recharts";
+import MainButton from "../MainButton/MainButton";
+import bellIcon from "../../assets/icons/btn-bell-white.svg";
 
 const ChartComponent = () => {
   const [data] = useState([
@@ -75,6 +77,15 @@ const ChartComponent = () => {
 
   return (
     <div className="chart">
+      <div className="chart__header">
+        <div>
+          <h2>Историја на цени</h2>
+          <p>Преглед на цените на продуктот и нивно варирање</p>
+        </div>
+        <MainButton rightLogo={bellIcon} variant="btn--black">
+          Изветување за цена
+        </MainButton>
+      </div>
       <ResponsiveContainer width={"100%"} height={400}>
         <AreaChart
           data={data}

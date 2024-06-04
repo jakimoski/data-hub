@@ -9,6 +9,9 @@
     padding: rem-calc(30);
     width: 50%;
     margin: 0 auto;
+    @include screenSize(laptop) {
+      width: 70%;
+    }
     @include screenSize(tablet) {
       width: 100%;
     }
@@ -82,6 +85,7 @@
   font-family: "Open Sans";
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   @include screenSize(tablet) {
     width: 100%;
   }

@@ -1,0 +1,28 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.product-information {
+  h4 {
+    font-size: $font-size-bigger;
+    font-weight: $font-weight-normal;
+  }
+  p {
+    font-size: $font-size-base;
+    line-height: 32px;
+    font-weight: $font-weight-normal;
+  }
+  ul {
+    margin-left: 20px;
+    li {
+      font-size: $font-size-medium;
+      font-weight: 600;
+      line-height: 36px;
+    }
+  }
+  h2,
+  h4,
+  p,
+  ul {
+    margin-bottom: 30px;
+  }
+}

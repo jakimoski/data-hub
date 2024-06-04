@@ -1,23 +1,25 @@
-import { products } from "../../data/data";
+import { partners, products } from "../../data/data";
 import Carousel from "../../components/Carousel/ProductsCarousel";
 import MainButton from "../../components/MainButton/MainButton";
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
 import ArrowIcon from "../../assets/icons/Arrow-top.png";
-import catlog1 from "../../assets/partners-image/Rectangle 127.png";
-import catlog2 from "../../assets/partners-image/Rectangle 128.png";
-import catlog3 from "../../assets/partners-image/Rectangle 129.png";
-import catlog4 from "../../assets/partners-image/Rectangle 130.png";
-import catlog5 from "../../assets/partners-image/Rectangle 131.png";
-
-import partner1 from "../../assets/partners-image/Rectangle 135.png";
-import partner2 from "../../assets/partners-image/Rectangle 136.png";
-import partner3 from "../../assets/partners-image/Frame 20023.png";
-import partner4 from "../../assets/partners-image/Frame 20024.png";
-import partner5 from "../../assets/partners-image/Frame 20025 copy.png";
+import ShopsCarousel from "../../components/Carousel/ShopsCarousel";
+import CatalogsCarousel from "../../components/Carousel/CatalogsCarousel";
 
 export default function Catalogs() {
+  const catalogs = [
+    "src/assets/partners-image/Rectangle 127.png",
+    "src/assets/partners-image/Rectangle 128.png",
+    "src/assets/partners-image/Rectangle 129.png",
+    "src/assets/partners-image/Rectangle 130.png",
+    "src/assets/partners-image/Rectangle 127.png",
+    "src/assets/partners-image/Rectangle 128.png",
+    "src/assets/partners-image/Rectangle 129.png",
+    "src/assets/partners-image/Rectangle 130.png",
+  ];
+
   return (
-    <section className="catalogs-page grid-page-aside ">
+    <main className="catalogs-page grid-page-aside ">
       <section className="catalogs-page__main">
         <div className="div-container">
           <h1 className="page-title">Каталози</h1>
@@ -29,23 +31,16 @@ export default function Catalogs() {
           </div>
         </div>
 
-        <div className="d-flex div-container">
-          <img src={catlog1} alt="Neptun" />
-          <img src={catlog2} alt="Neptun" />
-          <img src={catlog3} alt="Neptun" />
-          <img src={catlog4} alt="Neptun" />
-          <img src={catlog5} alt="Neptun" />
+        <div className="div-container">
+          <CatalogsCarousel catalogs={catalogs} />
         </div>
 
-        <div className="div-container">
-          <h2 className="page-title">Популарни продавници</h2>
-          <div className="d-flex d-flex--sb">
-            <img src={partner1} alt="Neptun" />
-            <img src={partner2} alt="Neptun" />
-            <img src={partner3} alt="Mebel-VI" />
-            <img src={partner4} alt="TehnoMarket" />
-            <img src={partner5} alt="Mr.Bricolage" />
-          </div>
+        <div className="bg-grey">
+          <ShopsCarousel
+            partners={partners}
+            title="Популарни продавници"
+            slidesToShow={4.5}
+          />
         </div>
 
         <div className="div-container">
@@ -55,15 +50,15 @@ export default function Catalogs() {
             products={products}
           />
         </div>
-        <section className="catalogs-page__bottom div-container">
+        <div className="catalogs-page__bottom div-container">
           <MainButton rightLogo={ArrowIcon} variant="btn--lg">
             Омиленo
           </MainButton>
-        </section>
+        </div>
       </section>
       <section className="catalogs-page__aside">
         <AsideBanner />
       </section>
-    </section>
+    </main>
   );
 }

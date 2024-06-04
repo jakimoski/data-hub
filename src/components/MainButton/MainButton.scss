@@ -140,4 +140,21 @@
       font-size: rem-calc(14);
     }
   }
+
+  &--black {
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: rem-calc(10);
+    display: flex;
+    align-items: center;
+    @include screenSize(laptop) {
+      font-size: rem-calc(16);
+      margin-bottom: rem-calc(10);
+    }
+
+    & .btn__logo--right {
+      width: rem-calc(20);
+      margin-left: 1rem;
+    }
+  }
 }

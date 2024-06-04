@@ -40,10 +40,18 @@
   border-radius: 20px;
 }
 
+.border-bottom {
+  border-bottom: 1.5px solid #ffa500;
+}
+
 .page-title {
   @include page-title;
   font-family: "Tahoma" sans-serif;
   margin-bottom: $gutter-base;
+}
+
+.p-m {
+  padding: $gutter-base;
 }
 
 .p-y-m {
@@ -55,7 +63,15 @@
   }
 }
 
+.p-t-m {
+  padding-top: $gutter-base;
+}
+
 .p-y-s {
   padding-top: $gutter-s;
   padding-bottom: $gutter-s;
+}
+
+.mt-l {
+  margin-top: $gutter-l;
 }

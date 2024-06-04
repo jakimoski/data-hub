@@ -21,11 +21,9 @@ export default function FilterHomeCard({ category, classes }: Props) {
   const categoryName =
     category.name.charAt(0).toUpperCase() + category.name.slice(1);
 
-  console.log(categoryName);
-
   return (
     <Link
-      to={`category/${category.name.toLowerCase()}`}
+      to={`/category/${category.name.toLowerCase()}`}
       className={classes}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -36,5 +34,3 @@ export default function FilterHomeCard({ category, classes }: Props) {
     </Link>
   );
 }
-
-// "filter-card"

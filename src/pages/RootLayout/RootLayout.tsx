@@ -7,9 +7,8 @@ export default function RootLayout() {
     <>
       <Navbar />
       <ScrollRestoration />
-      <main>
-        <Outlet />
-      </main>
+
+      <Outlet />
 
       <Footer />
     </>

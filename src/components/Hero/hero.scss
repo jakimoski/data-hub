@@ -14,6 +14,12 @@
     align-items: flex-start;
     justify-content: center;
 
+    @include screenSize(tablet) {
+      padding: ($gutter-base);
+      height: 50svh;
+      background-size: cover;
+    }
+
     span {
       color: $color-yellow;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);

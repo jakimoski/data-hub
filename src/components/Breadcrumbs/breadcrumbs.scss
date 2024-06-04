@@ -1,2 +1,12 @@
 @use "../../css/abstracts/" as *;
 @use "sass:math";
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & a {
+    color: $color-black;
+    font-weight: 600;
+  }
+}

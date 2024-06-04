@@ -2,8 +2,11 @@
 @use "sass:math";
 
 .filter-cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out;
+  padding-block: $gutter-base;
+  & .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

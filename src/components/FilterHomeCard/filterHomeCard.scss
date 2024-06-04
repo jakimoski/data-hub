@@ -6,11 +6,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  width: max-content;
   color: $color-black;
   img {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
+    @include screenSize(tablet) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   & p {
@@ -20,5 +24,8 @@
     font-weight: 600;
     flex: 1;
     line-height: 1.5;
+    @include screenSize(tablet) {
+      font-size: 14px;
+    }
   }
 }

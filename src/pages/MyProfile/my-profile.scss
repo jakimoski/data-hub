@@ -1,61 +1,51 @@
 @use "../../css/abstracts/" as *;
 
 .profile-page {
-  &__wrapper {
-    display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "actions items items items";
 
-    @include screenSize(tablet) {
-      flex-direction: column;
-    }
+  @include screenSize(tablet) {
+    flex-direction: column;
   }
 
   &__actions {
+    grid-area: actions;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 
-    width: 30%;
-
     &__wrapper {
-      margin-right: 0;
-
-      @include screenSize(tablet) {
-        width: 100%;
-        display: flex;
-      }
-    }
-
-    @include screenSize(tablet) {
-      width: 100%;
+      margin-left: 1rem;
     }
   }
 
   &__title {
     text-align: center;
-    @include screenSize(tablet) {
-      flex-basis: 100%;
-    }
+    @include title-2;
   }
 
   &__img {
     width: 250px;
     height: 250px;
     margin: 10px auto;
-    @include screenSize(tablet) {
-      width: 100px;
-      height: 100px;
+    @include screenSize(laptop) {
+      width: 150px;
+      height: 150px;
     }
   }
   & .button {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     padding: 20px;
     cursor: pointer;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 14px;
     &:hover {
       background-color: $color-gray;
     }
@@ -68,7 +58,7 @@
     & img {
       width: 38px;
       height: 38px;
-      margin-bottom: 1rem;
+
       @include screenSize(tablet) {
         scale: 0.8;
       }
@@ -106,6 +96,7 @@
     }
   }
   &__items {
+    grid-area: items;
     width: 100%;
 
     &__wrapper {
@@ -114,10 +105,10 @@
       padding: 1rem;
       width: 100%;
       height: 100%;
-      margin-top: 5rem;
+      margin-top: 4rem;
 
       h1 {
-        margin-left: 1rem;
+        @include page-title;
       }
 
       h2 {

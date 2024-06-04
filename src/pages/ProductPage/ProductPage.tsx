@@ -1,28 +1,29 @@
 import { useParams } from "react-router-dom";
 import MainProductDetails from "../../components/MainProductDetails/MainProductDetails";
-import AsideBanner from "../../components/AsideBanner/AsideBanner";
+
 import { products } from "../../data/data";
+import AsideBanner from "../../components/AsideBanner/AsideBanner";
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
-  const productId = id ?? "";
+  const productName = decodeURI(id as string);
 
-  const product = products.find((product) => product.id === +productId);
-
-  console.log(product);
+  const product = products.find(
+    (product) => product.productName === productName
+  );
 
   if (!product) {
     return <div>Product not found</div>;
   }
 
   return (
-    <section className="grid-page-aside">
+    <main className="grid-page-aside">
       <section className="product-page--product">
         <MainProductDetails product={product} />
       </section>
       <section className="product-page--aside">
         <AsideBanner />
       </section>
-    </section>
+    </main>
   );
 }

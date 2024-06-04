@@ -85,9 +85,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       ? totalStars ?? 0 / product.reviews.length
       : 0;
 
+  const productUrl = encodeURI(product.productName);
+
   return (
     <div className="product-card">
-      <Link to={`product/${product.id}`} className="product-card__link">
+      <Link to={`/product/${productUrl}`} className="product-card__link">
         <div>
           <div className="product-card__image-wrapper">
             <img

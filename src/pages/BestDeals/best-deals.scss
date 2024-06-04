@@ -1,62 +1,18 @@
 @use "../../css/abstracts/variables" as *;
+@use "sass:math";
 
-.best-deals {
-  .best-deals-nav {
-    display: flex;
-    padding: 40px 40px 0 40px;
-    font-size: $font-size-base;
-    font-weight: 600;
-    line-height: 32px;
-    a {
-      color: black;
-      margin-right: 5px;
-    }
-    span {
-      margin-right: 5px;
-    }
-  }
-  h2 {
-    padding: 40px 0 0 40px;
-    font-size: $heading-size-big;
-    font-weight: $font-weight-bold;
-    line-height: 88px;
-  }
-  .best-deals-buttons {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    font-size: 20px;
-
-    button {
-      border-radius: 100px;
-      border: 2px solid #ffa500;
-      font-size: 20px;
-      span {
-        margin-left: 50px;
-      }
-    }
-  }
-  .best-deals-products {
-    display: flex;
-    align-items: flex-start;
-    background-color: $color-gray;
-    border-radius: 30px 30px 0px 0px;
-    .card {
-      margin: 20px;
-      background-color: white;
-    }
-  }
-}
-
-.best-deals-filter {
-  flex-basis: 20%;
-}
-
-.best-deals-items {
+.best-deals__sort {
   display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  & .card {
-    flex-basis: 25%;
+  gap: 1rem;
+  flex-wrap: wrap-reverse;
+
+  &__filter {
+    z-index: 99;
+  }
+
+  &__related {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }

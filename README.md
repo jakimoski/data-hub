@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# DataHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+DataHub is a React-based web application that allows users to find better products at better prices. Users can view a list of products, add them to their favorites for easy access, leave reviews to share their experiences with others and add them to watchlist and get price change notifications. This project demonstrates the use of React for creating a dynamic application with user-friendly interface . This project is part of the hackathon from Brainster Front-End Academy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Mission Statement
 
-## Expanding the ESLint configuration
+DataHub's mission is to help consumers find better products at better prices, so they can save money by comparing prices for a specific product from nearly every e-commerce site in our country.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Screenshot
 
-- Configure the top-level `parserOptions` property like this:
+![App Screenshot](./data-hub-screenshot.jpg)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Tech Stack
+
+- **[ React ](https://react.dev/)**
+- **[ SASS](https://sass-lang.com/)**
+- **[ Framer Motion](https://www.framer.com/motion/)**
+- **[ Swiper](https://swiperjs.com/)**
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://git.brainster.co/Vlatko.Jakimoski-FE15/hackaton-team-2.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the app locally
+
+```bash
+  npm run dev
+```
+
+Build
+
+```bash
+  npm run build
+```

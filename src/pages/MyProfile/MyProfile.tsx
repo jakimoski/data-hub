@@ -18,66 +18,62 @@ export default function MyProfile() {
   };
 
   return (
-    <div className="profile-page">
-      <div className="profile-page__wrapper">
-        <div className="profile-page__actions">
-          <h2 className="profile-page__title">Мој профил</h2>
-          <img className="profile-page__img" src={profileImg} alt="profile" />
-          <div className="profile-page__actions__wrapper">
-            <button
-              className="button profile-page-btn"
-              onClick={() => setCurrentitem("favorite")}
-            >
-              <img src={favoriteImg} alt="Омилено" /> Омилено
-            </button>
-            <button
-              className="button profile-page-btn--notifications"
-              onClick={() => setCurrentitem("notifications")}
-            >
-              <img src={notification} alt="Известување" /> Известување на цена
-            </button>
-            <button
-              className=" button profile-page-btn--log-settings"
-              onClick={() => setCurrentitem("settings")}
-            >
-              <img src={settingsIcon} alt="Поставувања" /> Поставувања
-            </button>
-            <button
-              onClick={logOutHandler}
-              className="button profile-page-btn--log-out"
-            >
-              <img src={logoutIcon} alt="Одјави се" /> Одјави се
-            </button>
-          </div>
+    <main className="profile-page">
+      <section className="profile-page__actions">
+        <h2 className="profile-page__title">Мој профил</h2>
+        <img className="profile-page__img" src={profileImg} alt="profile" />
+        <div className="profile-page__actions__wrapper">
+          <button
+            className="button profile-page-btn"
+            onClick={() => setCurrentitem("favorite")}
+          >
+            <img src={favoriteImg} alt="Омилено" /> Омилено
+          </button>
+          <button
+            className="button profile-page-btn--notifications"
+            onClick={() => setCurrentitem("notifications")}
+          >
+            <img src={notification} alt="Известување" /> Известување на цена
+          </button>
+          <button
+            className=" button profile-page-btn--log-settings"
+            onClick={() => setCurrentitem("settings")}
+          >
+            <img src={settingsIcon} alt="Поставувања" /> Поставувања
+          </button>
+          <button
+            onClick={logOutHandler}
+            className="button profile-page-btn--log-out"
+          >
+            <img src={logoutIcon} alt="Одјави се" /> Одјави се
+          </button>
         </div>
-        <div className="profile-page__items">
-          <div className="profile-page__items__wrapper">
-            {cuurentItem && cuurentItem === "favorite" ? (
-              <>
-                <h1>Омилено</h1>
-                <Carousel
-                  title="Зачувани продукти"
-                  slidesToShow={6}
-                  products={products}
-                />
-              </>
-            ) : null}
-            {cuurentItem && cuurentItem === "notifications" ? (
-              <>
-                <h1>Известувања</h1>
-                <Carousel
-                  title="Зачувани продукти"
-                  slidesToShow={6}
-                  products={products}
-                />
-              </>
-            ) : null}
-            {cuurentItem && cuurentItem === "settings" ? (
-              <h1>Поставки</h1>
-            ) : null}
-          </div>
+      </section>
+      <section className="profile-page__items">
+        <div className="profile-page__items__wrapper">
+          {cuurentItem && cuurentItem === "favorite" ? (
+            <>
+              <h1>Омилено</h1>
+              <Carousel
+                title="Зачувани продукти"
+                slidesToShow={5}
+                products={products}
+              />
+            </>
+          ) : null}
+          {cuurentItem && cuurentItem === "notifications" ? (
+            <>
+              <h1>Известувања</h1>
+              <Carousel
+                title="Зачувани продукти"
+                slidesToShow={5}
+                products={products}
+              />
+            </>
+          ) : null}
+          {cuurentItem && cuurentItem === "settings" ? <h1>Поставки</h1> : null}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

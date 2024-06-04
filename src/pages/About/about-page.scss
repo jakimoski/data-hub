@@ -1,172 +1,79 @@
-@use "../../css/abstracts/variables" as *;
+@use "../../css/abstracts/" as *;
+@use "sass:math";
 
 .about-page {
-  .about-first {
-    @media (min-width: 1024px) {
-      display: flex;
-      padding: 60px;
+  &__section {
+    display: flex;
+    padding: $gutter-base;
+    gap: $gutter-base;
+    @include screenSize(tablet) {
+      padding: $gutter-s;
+    }
 
-      .about-img,
-      .about-content {
-        flex-basis: 50%;
-      }
-      .about-img img {
-        gap: 37.885px;
-        flex-shrink: 0;
-      }
-
-      .about-content {
-        margin-left: 150px;
-        h1 {
-          font-size: $heading-size-big;
-          font-weight: $font-weight-bold;
-          line-height: 88px;
-        }
-        p {
-          font-size: $font-size-bigger;
-          line-height: 48px;
-        }
+    &--first {
+      @include screenSize(tablet) {
+        flex-direction: column-reverse;
       }
     }
 
-    @media (max-width: 1023px) {
-      padding: 30px;
-
-      .about-img {
-        margin-bottom: 20px;
-      }
-
-      .about-content {
-        h1 {
-          font-size: $heading-size-base;
-          line-height: 40px;
-          font-weight: $font-weight-bold;
-
-          margin-bottom: 20px;
-        }
-        p {
-          font-size: $font-size-small;
-          line-height: 24px;
-        }
-      }
-    }
-  }
-  .about-second {
-    background-color: $color-gray;
-    border-radius: 20px;
-    border-top: 2px solid $color-yellow;
-
-    border-bottom: 2px solid $color-yellow;
-    @media (min-width: 1024px) {
-      display: flex;
+    &--second {
       flex-direction: row-reverse;
-      padding: 60px;
-
-      .about-img2 {
-        margin-left: 170px;
-        flex-basis: 40%;
-      }
-      .about-content {
-        flex-basis: 60%;
-        p {
-          font-size: $font-size-bigger;
-          line-height: 48px;
-        }
+      background-color: $color-gray;
+      border-radius: rem-calc(30);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      @include screenSize(tablet) {
+        flex-direction: column-reverse;
       }
     }
-    @media (max-width: 1023px) {
-      padding: 30px;
 
-      .about-img2 {
-        display: flex;
-        justify-content: center;
-      }
-      .about-content {
-        p {
-          font-size: $font-size-small;
-          line-height: 24px;
-        }
+    &--third {
+      width: 50%;
+      @include screenSize(tablet) {
+        width: 90%;
       }
     }
   }
 
-  .about-third {
-    @media (min-width: 1024px) {
-      display: flex;
-      flex-direction: column;
-      padding: 54px;
-      flex-basis: 50%;
+  &__text {
+    font-size: 18px;
+  }
 
-      .about-text {
-        width: 50%;
+  &__content {
+    flex-basis: 50%;
+  }
 
-        h2 {
-          font-size: $heading-size-big;
-          font-weight: $font-weight-bold;
-          line-height: 88px;
-        }
+  &__image-wrapper {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+  }
 
-        .about-text-1 {
-          margin-bottom: 54px;
-          h4 {
-            font-size: $font-size-bigger;
-            line-height: 48px;
-            font-weight: $font-weight-bold;
-          }
-          p {
-            font-size: $font-size-bigger;
-            line-height: 48px;
-            font-weight: $font-weight-normal;
-          }
-          .about-span {
-            display: flex;
-            align-items: center;
+  &__image {
+    gap: 37.885px;
+    flex-shrink: 0;
+  }
 
-            p {
-              margin-left: 12px;
-            }
-          }
-        }
-      }
-    }
-    @media (max-width: 1023px) {
-      display: flex;
-      flex-direction: column;
-      padding: 54px;
-      flex-basis: 50%;
+  &__title {
+    font-size: rem-calc(40);
+    margin-bottom: 1rem;
+  }
 
-      .about-text {
-        width: 50%;
+  &__text-group {
+    padding-block: $gutter-base;
+  }
 
-        h2 {
-          font-size: $heading-size-big;
-          font-weight: $font-weight-bold;
-          line-height: 88px;
-        }
+  &__contact {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+  }
 
-        .about-text-1 {
-          margin-bottom: 54px;
-          h4 {
-            font-size: $font-size-bigger;
-            line-height: 48px;
-            font-weight: $font-weight-bold;
-            margin-bottom: 24px;
-          }
-          p {
-            font-size: $font-size-bigger;
-            line-height: 48px;
-            font-weight: $font-weight-normal;
-          }
-          .about-span {
-            display: flex;
-            align-items: center;
-
-            p {
-              margin-left: 12px;
-            }
-          }
-        }
-      }
-    }
+  &__icon {
+    width: 20px;
+    height: 10px;
+  }
+  &__contact-info {
+    font-size: rem-calc(16);
   }
 }

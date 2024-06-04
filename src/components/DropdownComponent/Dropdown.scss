@@ -1,0 +1,71 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.dropdown {
+  z-index: 999;
+  text-align: center;
+
+  &__toggle {
+    border: 1px solid $color-yellow;
+    padding: rem-calc(8) rem-calc(25);
+    color: $color-black;
+    border-radius: rem-calc(20);
+    font-size: rem-calc(16);
+    font-family: "Open Sans", sans-serif;
+    background-color: $color-white;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 310px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    @include screenSize(tablet) {
+      font-size: rem-calc(14);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    border-radius: rem-calc(20);
+    top: 100%;
+    left: 0;
+    padding: 0;
+    color: $color-black;
+    border: 1px solid $color-yellow;
+    font-size: rem-calc(16);
+    background-color: $color-white;
+    list-style: none;
+    margin: 0;
+    width: 310px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    @include screenSize(tablet) {
+      font-size: rem-calc(14);
+    }
+
+    &__item {
+      padding: rem-calc(8) rem-calc(25);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: $color-yellow;
+      }
+    }
+  }
+
+  &__icon {
+    width: rem-calc(15);
+    height: auto;
+    transition: all 0.1s ease-in-out;
+    &--open {
+      width: rem-calc(15);
+      transform: rotate(180deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

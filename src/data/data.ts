@@ -1,3 +1,5 @@
+// import * from "../assets/partners-image/shops/"
+
 export type TSubCategories = {
   name: string;
   icon: string;
@@ -368,7 +370,7 @@ export const products: Product[] = [
   {
     id: 6,
     productName:
-      'Notebook Stand/Cooler Deepcool Multi Core X6 up to 15.6" Metal Mesh Black',
+      'Notebook Stand Cooler Deepcool Multi Core X6 up to 15.6" Metal Mesh Black',
     store: "tehnomarket",
     regularPrice: 1699,
     discountedPrice: 0,
@@ -403,7 +405,7 @@ export const products: Product[] = [
   {
     id: 8,
     productName:
-      'Notebook Stand/Cooler Genesis OXID 260 up to 17.3" Gaming LED Metal',
+      'Notebook Stand Cooler Genesis OXID 260 up to 17.3" Gaming LED Metal',
     store: "tehnomarket",
     regularPrice: 1499,
     discountedPrice: 0,
@@ -528,7 +530,7 @@ export const products: Product[] = [
   {
     id: 19,
     productName:
-      "Персонален компјутер EWE PC GAMER X921 i5-13400F/16GB/1TB SSD/RTX 4060 8GB",
+      "Персонален компјутер EWE PC GAMER X921 i5-13400F 16GB 1TB SSD8GB",
     store: "neptun",
     regularPrice: 56999,
     discountedPrice: 53999,
@@ -544,7 +546,7 @@ export const products: Product[] = [
   {
     id: 20,
     productName:
-      "Персонален компјутер EWE PC GAMER X3402 R5-5600X/16GB/1TB SSD/RX 7600 8GB",
+      "Персонален компјутер EWE PC GAMER X3402 R5-5600X 16GB 1TBSSD RX7600 8GB",
     store: "neptun",
     regularPrice: 47999,
     discountedPrice: 45999,
@@ -693,7 +695,7 @@ export const products: Product[] = [
   },
   {
     id: 30,
-    productName: 'Држач за QLED SAMSUNG WMN5870XR/XC, 76"',
+    productName: 'Држач за QLED SAMSUNG WMN5870XR XC, 76"',
     store: "neptun",
     regularPrice: 10999,
     discountedPrice: 5495,

@@ -1,34 +1,21 @@
-import ProductCard from "../ProductCard/ProductCard";
-import { Product } from "../../data/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import RightLogo from "../../assets/icons/Arrow-right.png";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/swiper-bundle.css";
-import MainButton from "../MainButton/MainButton";
+
+import Catalog from "../Catalog/Catalog";
 
 type Props = {
-  products?: Product[];
+  catalogs: string[];
   slidesToShow?: number;
-  title?: string;
 };
 
-export default function CatalogsCarousel({
-  products,
-  title,
-  slidesToShow,
-}: Props) {
+export default function CatalogsCarousel({ catalogs, slidesToShow }: Props) {
   return (
     <section className="carousel-products">
-      <div className="carousel-products__title">
-        <h2> {title}</h2>
-        <MainButton variant="btn--icon--sm" rightLogo={RightLogo}>
-          Види повеќе
-        </MainButton>
-      </div>
       <Swiper
-        // spaceBetween={16}
+        spaceBetween={16}
         slidesPerGroup={1}
         breakpoints={{
           // when window width is >= 320px
@@ -53,10 +40,10 @@ export default function CatalogsCarousel({
           },
         }}
       >
-        {products &&
-          products.map((product) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard product={product} />
+        {catalogs &&
+          catalogs.map((catalog, index) => (
+            <SwiperSlide key={index}>
+              <Catalog catalog={catalog} />
             </SwiperSlide>
           ))}
       </Swiper>

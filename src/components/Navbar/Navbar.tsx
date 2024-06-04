@@ -15,8 +15,6 @@ export default function Navbar() {
 
   const location = useLocation();
 
-  console.log(location.pathname);
-
   document.body.style.overflow = isVisible ? "hidden" : "auto";
 
   useEffect(() => {
@@ -35,13 +33,10 @@ export default function Navbar() {
           >
             <span></span>
           </button>
-          <NavLink className="header__logo" to="/data-hub">
+          <NavLink className="header__logo" to="/">
             <img src={Logo} alt="Brainster-Logo" />
           </NavLink>
-          <Link
-            to={"data-hub/category/бела%20техника"}
-            className="nav-search-link"
-          >
+          <Link to={"/category/бела%20техника"} className="nav-search-link">
             <img src={serchImg} alt="serach" />
           </Link>
           <nav aria-label="Main Navigation" className="nav">
@@ -68,17 +63,17 @@ export default function Navbar() {
                 </button>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/data-hub/catalogs">
+                <NavLink className="nav__list-link" to="data-hub/catalogs">
                   Каталози
                 </NavLink>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/data-hub/best-deals">
+                <NavLink className="nav__list-link" to="data-hub/best-deals">
                   Најдобри зделки
                 </NavLink>
               </li>
               <li className="nav__list-item">
-                <NavLink className="nav__list-link" to="/data-hub/about">
+                <NavLink className="nav__list-link" to="data-hub/about">
                   За нас
                 </NavLink>
               </li>

@@ -3,6 +3,16 @@
 
 .product-page--product {
   grid-area: main;
+  padding-right: 8rem;
+  @include screenSize(desktop-helper) {
+    padding-right: 4rem;
+  }
+  @include screenSize(laptop) {
+    padding-right: 1rem;
+  }
+  @include screenSize(tablet) {
+    padding-right: 0rem;
+  }
 }
 
 .product-page--aside {

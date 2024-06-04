@@ -155,14 +155,14 @@ $font-size-line-height-map: (
 @mixin heading-1 {
   @include typography(xl-6, bold);
   @include screenSize(phone) {
-    @include typography(xl, bold);
+    @include typography(xl-5, bold);
   }
 }
 // Main headings - H2
 @mixin heading-2 {
   @include typography(xl-3, bold);
   @include screenSize(phone) {
-    @include typography(lg, bold);
+    @include typography(xl, bold);
   }
 }
 
@@ -212,9 +212,6 @@ $font-size-line-height-map: (
   }
   @include screenSize(tablet) {
     @include typography(xl-1, bold);
-  }
-  @include screenSize(phone) {
-    @include typography(xl, bold);
   }
 }
 

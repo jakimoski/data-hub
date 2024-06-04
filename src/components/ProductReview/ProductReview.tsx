@@ -1,133 +1,117 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
+import { Product } from "../../data/data";
+import MainButton from "../MainButton/MainButton";
 
-export default function ProductReview() {
+export default function ProductReview({ product }: { product: Product }) {
+  const totalStars = product?.reviews?.reduce(
+    (acc, review) => acc + review.stars,
+    0
+  );
+
+  const averageStars =
+    product.reviews && product.reviews.length > 0
+      ? totalStars ?? 0 / product.reviews.length
+      : 0;
+
   return (
-    <Box>
-      <Typography
-        sx={{
-          fontSize: "36px",
-          fontWeight: 600,
-          paddingLeft: "30px",
-          marginTop: "30px",
-        }}
-      >
-        Рецензии
-      </Typography>
-      <Typography
-        sx={{ paddingLeft: "30px", fontSize: "20px", maringTop: "10px" }}
-      >
-        Погледни што мислат другите корисници
-      </Typography>
-      <Box sx={{ width: "100%", paddingLeft: "30px", marginBottom: "30px" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {" "}
-          <Grid item xs={6}>
-            <Typography
-              sx={{ fontSize: "40px", fontWeight: "600", marginY: "10px" }}
-            >
-              <StarIcon sx={{ color: "#ffa500", fontSize: "35px" }}></StarIcon>
-              4.1
-            </Typography>
-            <Typography sx={{ marginBottom: "10px" }}>
-              од <b>321 одговори</b>
-            </Typography>
-            <Box
-              sx={{ display: "flex", flexDirection: "column", marginY: "30px" }}
-            >
-              <Typography>
-                {" "}
-                5 <progress value={0.5} />
-              </Typography>
-              <Typography>
-                {" "}
-                4 <progress value={0.4} />
-              </Typography>
-              <Typography>
-                {" "}
-                3 <progress value={0.3} />
-              </Typography>
-              <Typography>
-                {" "}
-                2 <progress value={0.2} />
-              </Typography>
-              <Typography>
-                {" "}
-                1 <progress value={0.1} />
-              </Typography>
-            </Box>
-            <Button
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                color: "white",
-                backgroundColor: "black",
-                borderRadius: "10px",
-                border: "1px solid black",
-                paddingX: "50px",
-              }}
-            >
-              +Коментар
-            </Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ display: "flex" }}>
-              <img
-                src="../../src/assets/about-images/Ellipse 126.png"
-                alt="Stefan"
-              />
-              <Box>
-                <Typography sx={{ marginX: "20px", fontSize: "30px" }}>
-                  Стефан{" "}
-                </Typography>
-                <Typography sx={{ marginX: "20px", color: "grey" }}>
-                  сега{" "}
-                </Typography>
-              </Box>
-              <Box sx={{ marginLeft: "270px", marginTop: "15px" }}>
+    <div className="reviews">
+      <div className="reviews__header">
+        <h1 className="reviews__title page-title">Рецензии</h1>
+        <p className="reviews__subtitle">
+          Погледни што мислат другите корисници
+        </p>
+      </div>
+      <div className="reviews__content">
+        <div className="reviews__grid">
+          <div className="reviews__grid-item">
+            <div className="reviews__rating">
+              <span className="reviews__rating-value">
+                <span className="reviews__star-icon">★</span> {averageStars}
+              </span>
+              <p className="reviews__responses">
+                од{" "}
+                <b>
+                  {product?.reviews?.length}{" "}
+                  {product.reviews && product?.reviews?.length > 1
+                    ? " одговори"
+                    : " одговор"}
+                </b>
+              </p>
+              <div className="reviews__progress">
+                <div>
+                  <p>
+                    5 <progress value="0.5"></progress>
+                  </p>
+                  <p>
+                    4 <progress value="0.4"></progress>
+                  </p>
+                  <p>
+                    3 <progress value="0.3"></progress>
+                  </p>
+                  <p>
+                    2 <progress value="0.2"></progress>
+                  </p>
+                  <p>
+                    1 <progress value="0.1"></progress>
+                  </p>
+                </div>
+                <MainButton variant="btn--black">+ Коментар</MainButton>
+              </div>
+            </div>
+          </div>
+          <div className="reviews__grid-item">
+            <div className="reviews__user">
+              <div className="reviews__user-info">
                 <img
-                  src="../../src/assets/about-images/Frame 203.png"
-                  alt="stars"
+                  src="../../src/assets/about-images/Ellipse 126.png"
+                  alt="Stefan"
+                  className="reviews__user-image"
                 />
-              </Box>
-            </Box>
-            <Box>
-              <Typography sx={{ width: "80%", marginY: "10px" }}>
+                <div>
+                  <p className="reviews__user-name">Стефан</p>
+                  <p className="reviews__user-time">сега</p>
+                </div>
+              </div>
+              <img
+                src="../../src/assets/about-images/Frame 203.png"
+                alt="stars"
+                className="reviews__user-stars"
+              />
+            </div>
+            <div className="reviews__user-comment">
+              <p>
                 Дали ова веќе 2 недели го добив како замена за мојата постара
                 серија од 600. Првично сакав да ја купам серијата 1000, но таа е
                 распродадена насекаде.
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", marginTop: "60px" }}>
-              <img
-                src="../../src/assets/about-images/Ellipse 127.png"
-                alt="Franjo"
-              />
-              <Box>
-                <Typography sx={{ marginX: "20px", fontSize: "30px" }}>
-                  Фрањо{" "}
-                </Typography>
-                <Typography sx={{ marginX: "20px", color: "grey" }}>
-                  пред 3 дена{" "}
-                </Typography>
-              </Box>
-              <Box sx={{ marginLeft: "270px", marginTop: "15px" }}>
+              </p>
+            </div>
+            <div className="reviews__user">
+              <div className="reviews__user-info">
                 <img
-                  src="../../src/assets/about-images/Frame 204.png"
-                  alt="stars"
+                  src="../../src/assets/about-images/Ellipse 127.png"
+                  alt="Franjo"
+                  className="reviews__user-image"
                 />
-              </Box>
-            </Box>
-            <Box>
-              <Typography sx={{ width: "79%", marginY: "10px" }}>
+                <div>
+                  <p className="reviews__user-name">Фрањо</p>
+                  <p className="reviews__user-time">пред 3 дена</p>
+                </div>
+              </div>
+              <img
+                src="../../src/assets/about-images/Frame 204.png"
+                alt="stars"
+                className="reviews__user-stars"
+              />
+            </div>
+            <div className="reviews__user-comment">
+              <p>
                 Го купив ова за смути и мило ми е што го направивте. Лесен е за
                 употреба, многу брз и лесен за чистење. Го користевте и за да
                 скршите блок сирење и брзо успеа.
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-    </Box>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

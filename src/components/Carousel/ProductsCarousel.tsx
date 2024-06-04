@@ -42,14 +42,7 @@ export default function Carousel({ products, title, slidesToShow }: Props) {
               enabled: true,
             },
           },
-          320: {
-            slidesPerView: 2,
-            pagination: {
-              dynamicBullets: true,
-              clickable: false,
-              enabled: true,
-            },
-          },
+
           480: {
             slidesPerView: 2,
             pagination: {

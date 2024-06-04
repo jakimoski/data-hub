@@ -24,12 +24,12 @@ export default function ShopsCarousel({
 
       <Swiper
         spaceBetween={0}
-        speed={5000}
+        speed={10000}
         modules={[Pagination, Autoplay]}
         loop={true}
         autoplay={{
           delay: 2000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         // slidesPerView={"auto"}
         slidesPerGroup={2}

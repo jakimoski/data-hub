@@ -1,0 +1,11 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.catalog {
+  cursor: pointer;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}

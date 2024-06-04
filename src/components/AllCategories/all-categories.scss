@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 100svh;
   height: 100%;
-  z-index: 10;
+  z-index: 999;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -19,7 +19,8 @@
 
   @include screenSize(tablet) {
     grid-template-areas: "all all all all all all";
-    padding-top: 1rem;
+
+    top: 9vh;
   }
 
   &__search {
@@ -44,7 +45,7 @@
     border-right: 1px solid $color-yellow;
 
     @include screenSize(tablet) {
-      padding-top: 2rem;
+      padding-top: 0rem;
       margin: 1rem auto;
       width: 90%;
       border-right: none;

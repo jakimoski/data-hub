@@ -1,0 +1,144 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.reviews {
+  &__header {
+    margin-top: 30px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  &__content {
+    width: 100%;
+
+    margin-bottom: 30px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include screenSize(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__rating {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 10px;
+
+    &-value {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__star-icon {
+    color: #ffa500;
+    font-size: 35px;
+    margin-right: 5px;
+  }
+
+  &__responses {
+    margin-bottom: 10px;
+  }
+
+  &__progress {
+    margin-top: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .btn--black {
+      align-self: flex-start;
+    }
+
+    @include screenSize(laptop) {
+      width: 80%;
+    }
+    & p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    & progress[value] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      block-size: 6px;
+      width: 100%;
+    }
+
+    & progress[value]::-webkit-progress-value {
+      background-color: black;
+      border-radius: 10px;
+    }
+
+    & progress[value]::-webkit-progress-bar {
+      background: gray;
+      border-radius: 10px;
+    }
+  }
+
+  &__comment-button {
+    background-color: black;
+    color: white;
+    text-transform: none;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 50px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $gutter-s;
+    @include screenSize(laptop) {
+      flex-direction: column-reverse;
+    }
+    @include screenSize(tablet) {
+      flex-direction: row;
+    }
+    @include screenSize(phone) {
+      flex-direction: column-reverse;
+    }
+
+    &-image {
+      margin-right: 20px;
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+    }
+
+    &-info {
+      margin-right: 20px;
+      display: flex;
+    }
+
+    &-name {
+      font-size: 30px;
+    }
+
+    &-time {
+      color: grey;
+    }
+
+    &-stars {
+      @include screenSize(laptop) {
+        margin-block: 1rem;
+      }
+    }
+  }
+
+  &__user-comment {
+    margin-top: 10px;
+  }
+}
