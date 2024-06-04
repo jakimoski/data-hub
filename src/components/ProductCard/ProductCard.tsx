@@ -89,7 +89,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="product-card">
-      <Link to={`/product/${productUrl}`} className="product-card__link">
+      <Link to={`product/${productUrl}`} className="product-card__link">
         <div>
           <div className="product-card__image-wrapper">
             <img
