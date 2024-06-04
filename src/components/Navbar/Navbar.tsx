@@ -36,7 +36,7 @@ export default function Navbar() {
           <NavLink className="header__logo" to="/">
             <img src={Logo} alt="Brainster-Logo" />
           </NavLink>
-          <Link to={"/category/бела%20техника"} className="nav-search-link">
+          <Link to={"category/бела%20техника"} className="nav-search-link">
             <img src={serchImg} alt="serach" />
           </Link>
           <nav aria-label="Main Navigation" className="nav">
