@@ -1,5 +1,7 @@
 import { Product } from "../../data/data";
 import MainButton from "../MainButton/MainButton";
+import imageUser1 from "../../assets/about-images/Ellipse 126.png";
+import imageUser2 from "../../assets/about-images/Ellipse 127.png";
 
 export default function ProductReview({ product }: { product: Product }) {
   const totalStars = product?.reviews?.reduce(
@@ -62,7 +64,7 @@ export default function ProductReview({ product }: { product: Product }) {
             <div className="reviews__user">
               <div className="reviews__user-info">
                 <img
-                  src="../../src/assets/about-images/Ellipse 126.png"
+                  src={imageUser1}
                   alt="Stefan"
                   className="reviews__user-image"
                 />
@@ -87,7 +89,7 @@ export default function ProductReview({ product }: { product: Product }) {
             <div className="reviews__user">
               <div className="reviews__user-info">
                 <img
-                  src="../../src/assets/about-images/Ellipse 127.png"
+                  src={imageUser2}
                   alt="Franjo"
                   className="reviews__user-image"
                 />
