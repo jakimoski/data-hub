@@ -24,7 +24,7 @@ DataHub's mission is to help consumers find better products at better prices, so
 Clone the project
 
 ```bash
-  git clone https://git.brainster.co/Vlatko.Jakimoski-FE15/hackaton-team-2.git
+  git clone https://github.com/jakimoski/data-hub.git
 ```
 
 Go to the project directory
