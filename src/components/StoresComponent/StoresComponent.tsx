@@ -4,7 +4,7 @@ export default function StoresComponent() {
       <div className="add-banner">
         <div className="right-part">
           <div className="merkur">
-            <img src="/ads-images/merkur.png" alt="merkur" />
+            <img src="./ads-images/merkur.png" alt="merkur" />
             <p className="blue-text">Nutribullet PRO 900W</p>
           </div>
 
