@@ -748,42 +748,42 @@ export interface ShopPartner {
 
 export const partners: ShopPartner[] = [
   {
-    image: "./assets/partners-image/shops/anhoch.png",
+    image: "./partners-image/shops/anhoch.png",
     title: "Анхоч",
     url: "https://www.anhoch.com/",
   },
   {
-    image: "./assets/partners-image/shops/brikolaz.png",
+    image: "./partners-image/shops/brikolaz.png",
     title: "Г-дин. Бриколаж",
     url: "https://www.instagram.com/mr.bricolage_macedonia/",
   },
   {
-    image: "./assets/partners-image/shops/krusel.png",
+    image: "./partners-image/shops/krusel.png",
     title: "Крусел",
     url: "https://www.krusel.mk/",
   },
   {
-    image: "./assets/partners-image/shops/mebelVi.png",
+    image: "./partners-image/shops/mebelVi.png",
     title: "Мебел-Ви",
     url: "https://www.mebel-vi.com/",
   },
   {
-    image: "./assets/partners-image/shops/merkur.png",
+    image: "./partners-image/shops/merkur.png",
     title: "Меркур",
     url: "https://merkurmak.mk/",
   },
   {
-    image: "./assets/partners-image/shops/neptun.png",
+    image: "./partners-image/shops/neptun.png",
     title: "Нептун",
     url: "https://www.neptun.mk/",
   },
   {
-    image: "./assets/partners-image/shops/setec.png",
+    image: "./partners-image/shops/setec.png",
     title: "Сетек",
     url: "https://setec.mk/",
   },
   {
-    image: "./assets/partners-image/shops/tehnomarket.png",
+    image: "./partners-image/shops/tehnomarket.png",
     title: "Техномаркет",
     url: "https://tehnomarket.com.mk/",
   },

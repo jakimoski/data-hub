@@ -39,7 +39,7 @@ export default function Navbar() {
           >
             <span></span>
           </button>
-          <NavLink className="header__logo" to="/">
+          <NavLink className="header__logo" to="/data-hub">
             <img src={Logo} alt="Brainster-Logo" />
           </NavLink>
           <Link to={"/category/бела%20техника"} className="nav-search-link">
