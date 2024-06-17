@@ -9,7 +9,7 @@ import Carousel from "../../components/Carousel/ProductsCarousel";
 import { useNavigate } from "react-router-dom";
 
 export default function MyProfile() {
-  const [cuurentItem, setCurrentitem] = useState("favorite");
+  const [currentItem, setCurrentItem] = useState("favorite");
 
   const navigate = useNavigate();
 
@@ -25,19 +25,19 @@ export default function MyProfile() {
         <div className="profile-page__actions__wrapper">
           <button
             className="button profile-page-btn"
-            onClick={() => setCurrentitem("favorite")}
+            onClick={() => setCurrentItem("favorite")}
           >
             <img src={favoriteImg} alt="Омилено" /> Омилено
           </button>
           <button
             className="button profile-page-btn--notifications"
-            onClick={() => setCurrentitem("notifications")}
+            onClick={() => setCurrentItem("notifications")}
           >
             <img src={notification} alt="Известување" /> Известување на цена
           </button>
           <button
             className=" button profile-page-btn--log-settings"
-            onClick={() => setCurrentitem("settings")}
+            onClick={() => setCurrentItem("settings")}
           >
             <img src={settingsIcon} alt="Поставувања" /> Поставувања
           </button>
@@ -51,7 +51,7 @@ export default function MyProfile() {
       </section>
       <section className="profile-page__items">
         <div className="profile-page__items__wrapper">
-          {cuurentItem && cuurentItem === "favorite" ? (
+          {currentItem && currentItem === "favorite" ? (
             <>
               <h1>Омилено</h1>
               <Carousel
@@ -61,7 +61,7 @@ export default function MyProfile() {
               />
             </>
           ) : null}
-          {cuurentItem && cuurentItem === "notifications" ? (
+          {currentItem && currentItem === "notifications" ? (
             <>
               <h1>Известувања</h1>
               <Carousel
@@ -71,7 +71,7 @@ export default function MyProfile() {
               />
             </>
           ) : null}
-          {cuurentItem && cuurentItem === "settings" ? <h1>Поставки</h1> : null}
+          {currentItem && currentItem === "settings" ? <h1>Поставки</h1> : null}
         </div>
       </section>
     </main>
