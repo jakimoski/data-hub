@@ -1,11 +1,9 @@
-import image from "../../assets/products-img/Pic placeholder.png";
-
 export default function ExpertCard() {
   return (
     <div className="div-container">
       <div>
         <img
-          src={image}
+          src="../../../src/assets/products-img/Pic placeholder.png"
           alt=""
           style={{ borderRadius: "20px", width: "437px", fontSize: "22px" }}
         />

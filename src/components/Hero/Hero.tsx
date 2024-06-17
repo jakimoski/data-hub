@@ -2,6 +2,11 @@ import FiltersHome from "../FiltersHome/FiltersHome";
 import Search from "../Search/Search";
 
 export default function Hero() {
+  const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("search");
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-section__content">
@@ -12,7 +17,7 @@ export default function Hero() {
           Сите твои потреби на едно место
         </h4>
         <div className="hero-section__search">
-          <Search />
+          <Search searchHandler={searchHandler} />
         </div>
       </div>
       <div className="hero-section__categories">

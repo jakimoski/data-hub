@@ -46,8 +46,8 @@
 
 .page-title {
   @include page-title;
-  font-family: "Tahoma" sans-serif;
-  margin-bottom: $gutter-base;
+  font-family: "Tahoma", sans-serif;
+  margin-bottom: $gutter-s;
 }
 
 .p-m {
@@ -74,4 +74,16 @@
 
 .mt-l {
   margin-top: $gutter-l;
+}
+
+.mt-m {
+  margin-top: $gutter-base;
+}
+
+.mt-s {
+  margin-top: $gutter-s;
+}
+
+.mb-m {
+  margin-bottom: $gutter-base;
 }

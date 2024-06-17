@@ -22,10 +22,17 @@ html {
 body {
   margin: 0;
   min-height: 100svh;
+  z-index: 1;
 }
 
 main {
   overflow: hidden;
+  padding-inline: $gutter-l;
+  margin: 0 auto;
+  max-width: 1680px;
+  @include screenSize(laptop) {
+    padding-inline: $gutter-base;
+  }
 }
 
 #root {
@@ -50,6 +57,10 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+div {
+  unicode-bidi: isolate;
 }
 
 // .swiper {

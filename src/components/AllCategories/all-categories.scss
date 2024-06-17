@@ -6,14 +6,14 @@
   width: 100%;
   min-height: 100svh;
   height: 100%;
-  z-index: 999;
+  z-index: 15;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "all sub sub sub sub sub";
-  padding-top: 1rem;
+
   padding-bottom: 3rem;
-  top: 7vh;
+  top: 80px;
   left: 0;
   overflow-y: auto;
 
@@ -52,7 +52,7 @@
     }
 
     & span {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     & span:hover {
@@ -63,11 +63,11 @@
       display: flex;
       gap: 10px;
       align-items: center;
-      margin-left: 1rem;
-      padding: 10px 10px 10px 0;
+      padding: 15px 10px;
       background-color: transparent;
       text-align: left;
 
+      cursor: pointer;
       & p {
         font-family: "Open Sans";
         color: black;
@@ -75,6 +75,7 @@
         font-weight: 600;
         flex: 1;
         line-height: 1.5;
+        will-change: transform;
       }
 
       @include screenSize(desktop-helper) {
@@ -90,6 +91,14 @@
         width: 30px;
         height: 30px;
         flex-shrink: 1;
+        will-change: scale;
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      &:hover {
+        img {
+          scale: 1.1;
+        }
       }
     }
 
@@ -122,7 +131,7 @@
 
     h2 {
       margin-left: 1rem;
-      margin-top: 12px;
+      margin-top: 30px;
       text-transform: capitalize;
     }
 
@@ -133,14 +142,11 @@
       background-color: #f6f6f6;
       height: 100%;
       gap: 1rem;
-      padding-top: 1rem;
+      padding: $gutter-base;
       align-items: baseline;
       overflow-y: auto;
       height: 100%;
       padding-bottom: 5rem;
-      @include screenSize(big-desktop) {
-        gap: rem-calc(10);
-      }
 
       &::-webkit-scrollbar {
         display: none;
@@ -155,25 +161,33 @@
   background-color: #fff;
   border-radius: 15px;
   align-self: stretch;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include screenSize(laptop) {
+    flex-basis: 30%;
+  }
 
   &__title {
     font-family: "Open Sans";
-    font-size: rem-calc(16);
+    font-size: rem-calc(18);
     font-style: normal;
     font-weight: 600;
     line-height: 1.5;
     text-wrap: pretty;
     min-height: rem-calc(50);
     margin-bottom: rem-calc(10);
+    color: $color-black;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &-image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     margin: 0 auto;
     border-radius: 24px;
@@ -184,6 +198,7 @@
   &__link {
     color: $color-black;
     font-family: "Open Sans";
+    font-size: rem-calc(15);
     &:hover {
       text-decoration: underline;
     }

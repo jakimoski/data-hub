@@ -1,21 +1,49 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import arrowIcon from "../../assets/icons/Arrow-top.png";
 import { motion } from "framer-motion";
 
-const Dropdown = ({ options }: { options: string[] }) => {
+type DropdownProps = {
+  options: string[];
+  optionHandler: (option: string) => void;
+};
+
+const Dropdown = ({ options, optionHandler }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState<string>(
     options[0] as string
   );
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLButtonElement>(null);
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (
+        event.target instanceof HTMLElement &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="dropdown">
-      <button className="dropdown__toggle" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        ref={dropdownRef}
+        className="dropdown__toggle"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {selectedOption}
         <img
           src={arrowIcon}
@@ -34,7 +62,10 @@ const Dropdown = ({ options }: { options: string[] }) => {
               <li
                 className="dropdown__menu__item"
                 key={option}
-                onClick={() => handleOptionClick(option)}
+                onClick={() => {
+                  handleOptionClick(option);
+                  optionHandler(option);
+                }}
               >
                 {option}
               </li>

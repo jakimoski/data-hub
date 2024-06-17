@@ -2,7 +2,7 @@
 @use "sass:math";
 
 .dropdown {
-  z-index: 999;
+  z-index: 9;
   text-align: center;
 
   &__toggle {
@@ -10,7 +10,7 @@
     padding: rem-calc(8) rem-calc(25);
     color: $color-black;
     border-radius: rem-calc(20);
-    font-size: rem-calc(16);
+    font-size: rem-calc(15);
     font-family: "Open Sans", sans-serif;
     background-color: $color-white;
     backdrop-filter: blur(0px);
@@ -29,12 +29,12 @@
   &__menu {
     position: absolute;
     border-radius: rem-calc(20);
-    top: 100%;
+    top: 110%;
     left: 0;
     padding: 0;
     color: $color-black;
     border: 1px solid $color-yellow;
-    font-size: rem-calc(16);
+    font-size: rem-calc(15);
     background-color: $color-white;
     list-style: none;
     margin: 0;

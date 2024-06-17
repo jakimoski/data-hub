@@ -19,10 +19,9 @@ type Props = {
 export default function MainProductDetails({ product }: Props) {
   return (
     <div className="main-product">
-      <div className="div-container">
+      <div className="mt-s mb-m">
         <Breadcrumbs breadcrumbs={[{ label: product?.productName }]} />
       </div>
-
       <ProductOverview product={product} />
       <div className="div-container main-product__ads border-bottom">
         <p className="actions">

@@ -14,7 +14,7 @@
   & input[type="text"] {
     display: inline-block;
     width: 100%;
-    padding: rem-calc(10) rem-calc(40);
+    padding: rem-calc(10) rem-calc(30);
     border: none;
     outline: none;
     font-size: rem-calc(16);
@@ -38,6 +38,88 @@
 
     &:hover svg path {
       fill: $color-yellow;
+    }
+  }
+}
+.search-bar {
+  position: relative;
+  // width: 350px;
+
+  &__list {
+    position: fixed;
+    z-index: 99999;
+    background-color: $color-white;
+    list-style: none;
+    border-radius: 100px;
+    width: max-content;
+    top: 100%;
+    // width: 350px;
+  }
+}
+
+.search-bar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
+.nav-search-bar {
+  position: relative;
+  width: 450px;
+
+  @include screenSize(desktop-helper) {
+    width: 350px;
+  }
+  @include screenSize(laptop) {
+    width: 250px;
+  }
+
+  &__list {
+    position: fixed;
+    z-index: 99999;
+    background-color: $color-white;
+    list-style: none;
+    border-radius: 20px;
+    width: max-content;
+    top: 80%;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    @include screenSize(desktop-helper) {
+      width: 350px;
+    }
+    @include screenSize(laptop) {
+      width: 250px;
+    }
+
+    & ul {
+      list-style: none;
+      width: 100%;
+      overflow: hidden;
+      padding-block: 15px;
+    }
+
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-gray;
+      }
+    }
+
+    & a {
+      color: $color-black;
     }
   }
 }

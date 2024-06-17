@@ -3,11 +3,12 @@ import Logo from "../../assets/icons/Logo 1 2.svg";
 import { useEffect, useState } from "react";
 import SignIn from "../SignIn/SignIn";
 import AllCategories from "../AllCategories/AllCategories";
-import Search from "../Search/Search";
+
 import serchImg from "../../assets/icons/streamline_magnifying-glass-solid.png";
 import Modal from "../ModalComponent/Modal";
 import { createPortal } from "react-dom";
 import MainButton from "../MainButton/MainButton";
+import NavSearch from "../NavSearch/NavSearch";
 
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
@@ -21,6 +22,11 @@ export default function Navbar() {
     setIsVisible(false);
   }, [location]);
 
+  // const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("search");
+  // };
+
   return (
     <>
       <header className="header">
@@ -33,10 +39,10 @@ export default function Navbar() {
           >
             <span></span>
           </button>
-          <NavLink className="header__logo" to="/data-hub">
+          <NavLink className="header__logo" to="/">
             <img src={Logo} alt="Brainster-Logo" />
           </NavLink>
-          <Link to={"category/бела%20техника"} className="nav-search-link">
+          <Link to={"/category/бела%20техника"} className="nav-search-link">
             <img src={serchImg} alt="serach" />
           </Link>
           <nav aria-label="Main Navigation" className="nav">
@@ -78,9 +84,13 @@ export default function Navbar() {
                 </NavLink>
               </li>
             </ul>
-            <div className="serach-nav">
-              {location.pathname === "/" ? null : <Search />}
-            </div>
+
+            {location.pathname === "/" ? null : (
+              <div id="serach-nav">
+                <NavSearch />
+              </div>
+            )}
+
             <MainButton
               style={{ marginLeft: "auto" }}
               handler={() => setShowModal(true)}
@@ -90,7 +100,6 @@ export default function Navbar() {
           </nav>
         </div>
       </header>
-
       {isVisible ? <AllCategories /> : null}
       {showModal &&
         createPortal(

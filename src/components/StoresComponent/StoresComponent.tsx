@@ -1,12 +1,10 @@
-import image from "../../assets/ads-images/merkur.png";
-
 export default function StoresComponent() {
   return (
     <div className="container-store">
       <div className="add-banner">
         <div className="right-part">
           <div className="merkur">
-            <img src={image} alt="merkur" />
+            <img src="/ads-images/merkur.png" alt="merkur" />
             <p className="blue-text">Nutribullet PRO 900W</p>
           </div>
 

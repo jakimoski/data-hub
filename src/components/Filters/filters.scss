@@ -6,12 +6,16 @@
 
   &__category {
     margin-bottom: 2rem;
-
+    padding-right: 1rem;
     &__title {
       margin-bottom: 1rem;
-      @include sub-title;
+      font-size: 1rem;
       font-family: "Open Sans", sans-serif;
     }
+  }
+
+  & .search-bar {
+    margin-bottom: 1rem;
   }
 }
 
@@ -21,7 +25,11 @@
   padding-left: 30px;
   margin-bottom: 15px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  @include screenSize(laptop) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 
   &__input {
     position: absolute;
@@ -38,10 +46,111 @@
     background: transparent;
     border-radius: 50%;
     border: 1px solid $color-yellow;
-    transition: all 0.1s ease-in-out;
+    outline: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
   }
 
   &__input:checked ~ &__indicator {
     border: 5px solid $color-yellow;
+  }
+
+  &:hover &__indicator {
+    outline: 2px solid transparentize($color-yellow, 0.5);
+  }
+}
+
+.range-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__thumb,
+  &__thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &__thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 200px;
+    outline: none;
+
+    &--left {
+      z-index: 3;
+    }
+
+    &--right {
+      z-index: 4;
+    }
+
+    &::-webkit-slider-thumb {
+      background-color: $color-yellow;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+      margin-top: 4px;
+      pointer-events: all;
+      position: relative;
+    }
+
+    &::-moz-range-thumb {
+      background-color: $color-yellow;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+      margin-top: 4px;
+      pointer-events: all;
+      position: relative;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    width: 200px;
+
+    &-track,
+    &-range,
+    &-left-value,
+    &-right-value {
+      position: absolute;
+    }
+
+    &-track,
+    &-range {
+      border-radius: 3px;
+      height: 2px;
+    }
+
+    &-track {
+      background-color: #ced4da;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &-range {
+      background-color: $color-yellow;
+      z-index: 2;
+    }
+
+    &-left-value,
+    &-right-value {
+      color: #dee2e6;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    &-left-value {
+      left: 6px;
+    }
+
+    &-right-value {
+      right: -4px;
+    }
   }
 }

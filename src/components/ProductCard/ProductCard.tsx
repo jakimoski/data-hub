@@ -59,6 +59,9 @@ export default function ProductCard({ product }: ProductCardProps) {
     setIsWatching((prev) => !prev);
   }
 
+  // const toMkd = (price: number) =>
+  //   price.toLocaleString("mk-MK", { style: "currency", currency: "MKD" });
+
   function calculateDiscountPercentage(
     regularPrice: number,
     discountPrice: number
@@ -75,15 +78,15 @@ export default function ProductCard({ product }: ProductCardProps) {
     return discountPercentage;
   }
 
-  const totalStars = product?.reviews?.reduce(
-    (acc, review) => acc + review.stars,
-    0
-  );
+  // const totalStars = product?.reviews?.reduce(
+  //   (acc, review) => acc + review.stars,
+  //   0
+  // );
 
-  const averageStars =
-    product.reviews && product.reviews.length > 0
-      ? totalStars ?? 0 / product.reviews.length
-      : 0;
+  // const averageStars =
+  //   product.reviews && product.reviews.length > 0
+  //     ? totalStars ?? 0 / product.reviews.length
+  //     : 0;
 
   const productUrl = encodeURI(product.productName);
 
@@ -100,6 +103,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               // src={`/products-img/${product.imageUrl}.png`}
               src={product.imageUrl}
               alt="Avatar"
+              loading="lazy"
             />
 
             {product.discountedPrice > 0 && (
@@ -114,7 +118,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
           <h4 className="product-card__name">
-            {truncateText(product.productName, 25)}{" "}
+            {truncateText(product.productName, 25)}
           </h4>
         </div>
 
@@ -124,14 +128,14 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
           <div className="d-flex">
             <div>
-              <p>
+              <p className="product-card__price">
                 {product.discountedPrice > 0
                   ? product.discountedPrice
                   : product.regularPrice}{" "}
                 ден.
               </p>
             </div>
-            <div className="product-card__rating">
+            {/* <div className="product-card__rating">
               <button>
                 <svg
                   width="20"
@@ -147,7 +151,10 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </svg>
               </button>
               {averageStars}
-            </div>
+            </div> */}
+          </div>
+          <div className="product-card__stores">
+            <p>in {product.store.length} stores</p>
           </div>
         </div>
       </Link>

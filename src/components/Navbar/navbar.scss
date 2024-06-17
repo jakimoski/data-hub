@@ -2,8 +2,7 @@
 @use "sass:math";
 
 .header {
-  z-index: 9999;
-  position: relative;
+  z-index: 20;
   border-bottom: 1px solid $color-yellow;
   background-color: $color-white;
 
@@ -13,14 +12,14 @@
   }
 
   &__wrapper {
+    position: relative;
     display: flex;
     transform-style: preserve-3d;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
     margin: 0 auto;
-    padding: rem-calc(5);
-    z-index: 9999;
+    padding: rem-calc(5) rem-calc(24);
+    z-index: 1000;
     @include screenSize(laptop) {
       width: 98%;
     }
@@ -29,12 +28,12 @@
     width: rem-calc(60);
   }
 }
+
 .nav {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
   margin-left: rem-calc(40);
   @include screenSize(desktop-helper) {
     margin-left: 0;
@@ -42,11 +41,13 @@
   @include screenSize(tablet) {
     display: none;
   }
+
   &-show {
     transform: translateX(0);
     opacity: 1;
     transition: transform 0.3s ease-in-out;
   }
+
   &__toggle {
     display: none;
     border: 0;
@@ -54,10 +55,9 @@
     aspect-ratio: 1 / 1;
     cursor: pointer;
     background: none;
-
     position: relative;
     margin-right: rem-calc(10);
-    z-index: 99999;
+    z-index: 1001; // Ensure it's above the overlay
     @include screenSize(tablet) {
       display: block;
     }
@@ -115,6 +115,7 @@
       }
     }
   }
+
   &__list {
     list-style: none;
     padding: 0;
@@ -138,7 +139,7 @@
       }
 
       @include screenSize(laptop) {
-        padding: 0 rem-calc(5);
+        padding: rem-calc(5);
       }
 
       &::after {
@@ -148,7 +149,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: $color-black;
+        background-color: $color-yellow;
         scale: 0 1;
         transition: all 0.3s cubic-bezier(0.075, 0.82, 0.665, 1);
         @include screenSize(tablet) {
@@ -173,12 +174,9 @@
       color: $color-black;
       cursor: pointer;
       font-family: "Open Sans";
-      font-size: rem-calc(18);
+      font-size: rem-calc(16);
       font-style: normal;
       font-weight: 400;
-      @include screenSize(desktop-helper) {
-        font-size: rem-calc(16);
-      }
 
       &__icon {
         transform: rotate(180deg);
@@ -219,10 +217,27 @@
   }
 }
 
-.serach-nav {
+#search-nav {
   width: auto;
-  min-width: 30%;
+  flex: 0 1 30%;
+  z-index: 1001; // Ensure it's above the overlay
   @include screenSize(laptop) {
     width: 25%;
   }
+}
+
+.overlay-nav {
+  background-color: rgba(52, 52, 52, 0.5);
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: visibility 0ms linear 0.2s, opacity 0.2s ease;
+  visibility: visible;
+  height: 100vh;
+  backface-visibility: visible;
+  z-index: 999; // Lower than the search-nav
 }

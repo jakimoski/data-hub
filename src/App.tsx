@@ -4,7 +4,12 @@ import "./App.css";
 import { routes } from "./router/routes";
 
 function App() {
-  return <RouterProvider router={routes}></RouterProvider>;
+  return (
+    <RouterProvider
+      router={routes}
+      future={{ v7_startTransition: true }}
+    ></RouterProvider>
+  );
 }
 
 export default App;

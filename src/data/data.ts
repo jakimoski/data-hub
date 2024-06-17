@@ -14,7 +14,7 @@ export type category = {
 export type Product = {
   id: number;
   productName: string;
-  store: string;
+  store: string[];
   regularPrice: number;
   discountedPrice: number;
   manufacturer: string;
@@ -216,7 +216,7 @@ export const products: Product[] = [
   {
     id: 1,
     productName: "Apple Magic Mouse 3 (2021)",
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun", "setec"],
     regularPrice: 5499,
     discountedPrice: 0,
     manufacturer: "APPLE",
@@ -251,7 +251,7 @@ export const products: Product[] = [
   {
     id: 2,
     productName: "Mouse Deepcool Wireless MG510 Gaming RGB 19000dpi Black",
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun", "setec"],
     regularPrice: 5499,
     discountedPrice: 4799,
     manufacturer: "DEEPCOOL",
@@ -290,7 +290,7 @@ export const products: Product[] = [
   {
     id: 3,
     productName: "Mouse BenQ ZOWIE Gaming Gear EC1-B Large Black",
-    store: "tehnomarket",
+    store: ["tehnomarket"],
     regularPrice: 4999,
     discountedPrice: 3299,
     manufacturer: "BENQ",
@@ -330,7 +330,7 @@ export const products: Product[] = [
     id: 4,
     productName:
       "RAZER DEATHADDER V2 MINI ULTRA-LIGHTWEIGHT ERGONOMIC OPTICAL GAMING MOUSE RGB CHROMA BLACK",
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun"],
     regularPrice: 2699,
     discountedPrice: 2599,
     manufacturer: "RAZER",
@@ -371,7 +371,7 @@ export const products: Product[] = [
     id: 6,
     productName:
       'Notebook Stand Cooler Deepcool Multi Core X6 up to 15.6" Metal Mesh Black',
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun", "setec"],
     regularPrice: 1699,
     discountedPrice: 0,
     manufacturer: "DEEPCOOL",
@@ -406,7 +406,7 @@ export const products: Product[] = [
     id: 8,
     productName:
       'Notebook Stand Cooler Genesis OXID 260 up to 17.3" Gaming LED Metal',
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun", "setec", "brikolaz"],
     regularPrice: 1499,
     discountedPrice: 0,
     manufacturer: "GENESIS",
@@ -440,7 +440,7 @@ export const products: Product[] = [
     id: 9,
     productName:
       'NATEC GENESIS OXID 250 NOTEBOOK STAND UP TO 17.3" GAMING LED METAL',
-    store: "tehnomarket",
+    store: ["tehnomarket", "neptun", "setec", "brikolaz", "anhoch"],
     regularPrice: 1499,
     discountedPrice: 899,
     manufacturer: "NATEC",
@@ -478,7 +478,7 @@ export const products: Product[] = [
     id: 10,
     productName:
       'SBOX WHITE SHARK ICE WIZARD NOTEBOOK STAND UP TO 17.3" 5xLED FANS',
-    store: "tehnomarket",
+    store: ["tehnomarket"],
     regularPrice: 1499,
     discountedPrice: 1299,
     manufacturer: "SBOX",
@@ -516,7 +516,7 @@ export const products: Product[] = [
   {
     id: 18,
     productName: "Нега на екран CANYON CCL12 Wipes for Plastic 100 pcs",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 199,
     discountedPrice: 0,
     manufacturer: "CANYON",
@@ -531,7 +531,7 @@ export const products: Product[] = [
     id: 19,
     productName:
       "Персонален компјутер EWE PC GAMER X921 i5-13400F 16GB 1TB SSD8GB",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 56999,
     discountedPrice: 53999,
     manufacturer: "EWE PC",
@@ -547,7 +547,7 @@ export const products: Product[] = [
     id: 20,
     productName:
       "Персонален компјутер EWE PC GAMER X3402 R5-5600X 16GB 1TBSSD RX7600 8GB",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 47999,
     discountedPrice: 45999,
     manufacturer: "EWE PC",
@@ -562,7 +562,7 @@ export const products: Product[] = [
   {
     id: 21,
     productName: "PlayStation 5 PS5 Slim 1TB Blu-Ray Edition",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 33999,
     discountedPrice: 0,
     manufacturer: "Play Station",
@@ -577,7 +577,7 @@ export const products: Product[] = [
   {
     id: 22,
     productName: "PS5 Dualsense Wireless Controller – Cobalt Blue",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 4599,
     discountedPrice: 0,
     manufacturer: "Play Station",
@@ -592,7 +592,7 @@ export const products: Product[] = [
   {
     id: 23,
     productName: "PS5 Dualsense Wireless Controller – Volcanic Red",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 4599,
     discountedPrice: 0,
     manufacturer: "Play Station",
@@ -607,7 +607,7 @@ export const products: Product[] = [
   {
     id: 24,
     productName: "PS5 Dualsense Wireless Controller",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 4299,
     discountedPrice: 0,
     manufacturer: "Play Station",
@@ -622,7 +622,7 @@ export const products: Product[] = [
   {
     id: 25,
     productName: "Wireless слушалки JBL QUANTUM 350 WL BLK",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 5999,
     discountedPrice: 0,
     manufacturer: "JBL",
@@ -637,7 +637,7 @@ export const products: Product[] = [
   {
     id: 26,
     productName: "BT слушалки SONY BT WH-CH720NL",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 5999,
     discountedPrice: 5499,
     manufacturer: "SONY",
@@ -652,7 +652,7 @@ export const products: Product[] = [
   {
     id: 27,
     productName: "Слушалки MOYE Timbre ANC BLK",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 3799,
     discountedPrice: 2999,
     manufacturer: "MOYE",
@@ -666,7 +666,7 @@ export const products: Product[] = [
   {
     id: 28,
     productName: "SNOPY SN-XBK33 BATTY BT Headset with TF Card White",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 899,
     discountedPrice: 0,
     manufacturer: "SNOPY",
@@ -681,7 +681,7 @@ export const products: Product[] = [
   {
     id: 29,
     productName: "BT звучник SONY LSPX S3",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 19999,
     discountedPrice: 7995,
     manufacturer: "SONY",
@@ -696,7 +696,7 @@ export const products: Product[] = [
   {
     id: 30,
     productName: 'Држач за QLED SAMSUNG WMN5870XR XC, 76"',
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 10999,
     discountedPrice: 5495,
     manufacturer: "SAMSUNG",
@@ -711,7 +711,7 @@ export const products: Product[] = [
   {
     id: 31,
     productName: "Држач MELICONI SlimStyle Plus 600 SR, 50-82''",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 3499,
     discountedPrice: 2799,
     manufacturer: "MELICONI",
@@ -726,7 +726,7 @@ export const products: Product[] = [
   {
     id: 32,
     productName: "SUKO SAS + 2usb 2,1a polnac za mobilni bel",
-    store: "neptun",
+    store: ["neptun"],
     regularPrice: 799,
     discountedPrice: 547,
     manufacturer: "SAS",
@@ -748,42 +748,42 @@ export interface ShopPartner {
 
 export const partners: ShopPartner[] = [
   {
-    image: "./partners-image/shops/anhoch.png",
+    image: "src/assets/partners-image/shops/anhoch.png",
     title: "Анхоч",
     url: "https://www.anhoch.com/",
   },
   {
-    image: "./partners-image/shops/brikolaz.png",
+    image: "src/assets/partners-image/shops/brikolaz.png",
     title: "Г-дин. Бриколаж",
     url: "https://www.instagram.com/mr.bricolage_macedonia/",
   },
   {
-    image: "./partners-image/shops/krusel.png",
+    image: "src/assets/partners-image/shops/krusel.png",
     title: "Крусел",
     url: "https://www.krusel.mk/",
   },
   {
-    image: "./partners-image/shops/mebelVi.png",
+    image: "src/assets/partners-image/shops/mebelVi.png",
     title: "Мебел-Ви",
     url: "https://www.mebel-vi.com/",
   },
   {
-    image: "./partners-image/shops/merkur.png",
+    image: "src/assets/partners-image/shops/merkur.png",
     title: "Меркур",
     url: "https://merkurmak.mk/",
   },
   {
-    image: "./partners-image/shops/neptun.png",
+    image: "src/assets/partners-image/shops/neptun.png",
     title: "Нептун",
     url: "https://www.neptun.mk/",
   },
   {
-    image: "./partners-image/shops/setec.png",
+    image: "src/assets/partners-image/shops/setec.png",
     title: "Сетек",
     url: "https://setec.mk/",
   },
   {
-    image: "./partners-image/shops/tehnomarket.png",
+    image: "src/assets/partners-image/shops/tehnomarket.png",
     title: "Техномаркет",
     url: "https://tehnomarket.com.mk/",
   },

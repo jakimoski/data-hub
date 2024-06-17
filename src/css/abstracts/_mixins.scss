@@ -5,13 +5,11 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: ($gutter-base);
-  padding-bottom: ($gutter-base);
+  padding-top: ($gutter-s);
+  padding-bottom: ($gutter-s);
 
   @media (max-width: 48em) {
     width: 98%;
-    padding-top: ($gutter-base);
-    padding-bottom: ($gutter-base);
   }
 }
 
@@ -94,7 +92,7 @@ $font-size-map: (
   xl-4: rem-calc(46),
   xl-3: rem-calc(40),
   xl-2: rem-calc(32),
-  xl-1: rem-calc(28),
+  xl-1: rem-calc(26),
   xl: rem-calc(24),
   lg: rem-calc(22),
   md: rem-calc(20),
@@ -206,12 +204,12 @@ $font-size-line-height-map: (
 
 // Page Title
 @mixin page-title {
-  @include typography(xl-3, bold);
+  @include typography(xl-1, bold);
   @include screenSize(laptop) {
-    @include typography(xl-2, bold);
+    @include typography(xl, bold);
   }
   @include screenSize(tablet) {
-    @include typography(xl-1, bold);
+    @include typography(md, bold);
   }
 }
 

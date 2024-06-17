@@ -14,7 +14,7 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const redirectHandler = () => {
-    navigate("/my-profile");
+    navigate("/data-hub/my-profile");
   };
 
   return (

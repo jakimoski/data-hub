@@ -16,15 +16,18 @@ h3 {
 
 h1 {
   @include heading-1;
+  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
   @include heading-2;
   text-transform: capitalize;
+  -webkit-font-smoothing: antialiased;
 }
 
 h3 {
   @include heading-3;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {

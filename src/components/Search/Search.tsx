@@ -1,9 +1,16 @@
-export default function Search() {
+export default function Search({
+  searchHandler,
+}: {
+  searchHandler: (e: React.FormEvent<HTMLFormElement>) => void;
+}) {
   return (
-    <form className="search-bar">
+    <form
+      className="search-bar"
+      onSubmit={(e: React.FormEvent<HTMLFormElement>) => searchHandler(e)}
+    >
       <div className="input-wrapper">
         <input type="text" className="search-input" placeholder="Пребарај" />
-        <button type="submit">
+        <button type="submit" className="search-button">
           <svg
             width="20"
             height="20"
@@ -30,5 +37,3 @@ export default function Search() {
     </form>
   );
 }
-
-// input-wrapper

@@ -4,7 +4,6 @@
   &__top {
     grid-area: top;
     height: fit-content;
-    padding-inline: $gutter-base;
   }
 
   &__main {
@@ -17,11 +16,10 @@
   }
 
   &__breadcrumbs {
-    margin-left: $gutter-s;
+    margin-top: $gutter-s;
   }
 
   &__title {
-    margin-left: $gutter-s;
     margin-top: $gutter-base;
   }
 
@@ -91,7 +89,7 @@
     background-color: $color-gray;
     border-top-left-radius: $border-radius-xl;
     padding-block: $gutter-base;
-    padding-inline: rem-calc(5);
+    padding-inline: rem-calc(15);
     @include screenSize(desktop-helper) {
       grid-template-columns: repeat(3, 1fr);
       padding-inline: rem-calc(10);
