@@ -12,10 +12,10 @@ type Props = {
 export default function Breadcrumbs({ breadcrumbs }: Props) {
   return (
     <div className="breadcrumbs">
-      <Link to="/">Почетна</Link> <span>/</span>
+      <Link to="/data-hub/">Почетна</Link> <span>/</span>
       {breadcrumbs &&
         breadcrumbs.map((item) => (
-          <Link key={item.label} to={item.link as string}>
+          <Link key={item.label} to={`/data-hub/${item.link}`}>
             {item.label}
           </Link>
         ))}
