@@ -19,7 +19,7 @@ export default function MyProfile() {
 
   const logOutHandler = () => {
     localStorage.removeItem("user");
-    navigate("/");
+    navigate("/data-hub/");
   };
 
   return (

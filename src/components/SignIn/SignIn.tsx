@@ -25,7 +25,7 @@ export default function SignIn() {
       userList: [],
     };
     localStorage.setItem("user", JSON.stringify(user));
-    navigate("/my-profile");
+    navigate("/data-hub/my-profile");
   };
 
   return (

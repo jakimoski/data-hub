@@ -4,6 +4,9 @@ import MapComponent from "../MapComponent/MapComponent";
 import Modal from "../ModalComponent/Modal";
 import { useState } from "react";
 import ProductImages from "./ProductImages";
+import dropsIcon from "../../assets/icons/drops.png";
+import sizeIcon from "../../assets/icons/size.png";
+import pinIcon from "../../assets/icons/pin.png";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
@@ -56,18 +59,18 @@ function ProductOverview({ product }: { product: Product }) {
         </p>
         <div className="product-overview__customize">
           <button className="product-overview__customize__btn">
-            <img src="../../../src/assets/icons/drops.png" alt="" />
+            <img src={dropsIcon} alt="color-btn" />
             Боја
           </button>
           <button className="product-overview__customize__btn">
-            <img src="../../../src/assets/icons/size.png" alt="" />
+            <img src={sizeIcon} alt="size-btn" />
             Големина
           </button>
           <button
             onClick={() => setShowModal(true)}
             className="product-overview__customize__btn"
           >
-            <img src="../../../src/assets/icons/pin.png" alt="" />
+            <img src={pinIcon} alt="pin-btn" />
             Близу до тебе
           </button>
           {showModal &&

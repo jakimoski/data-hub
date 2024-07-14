@@ -5,18 +5,18 @@ import AsideBanner from "../../components/AsideBanner/AsideBanner";
 import ShopsCarousel from "../../components/Carousel/ShopsCarousel";
 import CatalogsCarousel from "../../components/Carousel/CatalogsCarousel";
 
-export default function Catalogs() {
-  const catalogs = [
-    "src/assets/partners-image/Rectangle 127.png",
-    "src/assets/partners-image/Rectangle 128.png",
-    "src/assets/partners-image/Rectangle 129.png",
-    "src/assets/partners-image/Rectangle 130.png",
-    "src/assets/partners-image/Rectangle 127.png",
-    "src/assets/partners-image/Rectangle 128.png",
-    "src/assets/partners-image/Rectangle 129.png",
-    "src/assets/partners-image/Rectangle 130.png",
-  ];
+const catalogs = [
+  "./ads-images/Rectangle 127.png",
+  "./ads-images/Rectangle 128.png",
+  "./ads-images/Rectangle 129.png",
+  "./ads-images/Rectangle 130.png",
+  "./ads-images/Rectangle 127.png",
+  "./ads-images/Rectangle 128.png",
+  "./ads-images/Rectangle 129.png",
+  "./ads-images/Rectangle 130.png",
+];
 
+export default function Catalogs() {
   return (
     <main className="catalogs-page grid-page-aside ">
       <section className="catalogs-page__main">
