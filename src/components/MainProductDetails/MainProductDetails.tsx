@@ -10,6 +10,7 @@ import { products } from "../../data/data";
 import ProductInformation from "../ProductInformation/ProductInformation";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import { Link } from "react-scroll";
+import bannerimage from "../../assets/ads-images/image-banner.png";
 
 type Props = {
   product: Product;
@@ -91,10 +92,7 @@ export default function MainProductDetails({ product }: Props) {
           name={product.productName}
         />
         <div className="image-banner ">
-          <img
-            src="../../../src/assets/ads-images/image-banner.png"
-            alt="image-banner"
-          />
+          <img src={bannerimage} alt="image-banner" />
         </div>
         <StoresComponent
           price={
