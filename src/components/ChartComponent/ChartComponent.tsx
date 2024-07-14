@@ -76,10 +76,10 @@ const ChartComponent = () => {
   };
 
   return (
-    <div className="chart">
+    <div className="chart p-y-m">
       <div className="chart__header">
         <div>
-          <h2>Историја на цени</h2>
+          <h2 className="page-title">Историја на цени</h2>
           <p>Преглед на цените на продуктот и нивно варирање</p>
         </div>
         <MainButton rightLogo={bellIcon} variant="btn--black">

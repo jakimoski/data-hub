@@ -3,6 +3,7 @@
 
 .hero-section {
   &__content {
+    position: relative;
     padding: ($gutter-base * 3);
     border-radius: 0 0 rem-calc(30) rem-calc(30);
     background: url("/backgrounds/heroBg.jpg") no-repeat center center/cover;

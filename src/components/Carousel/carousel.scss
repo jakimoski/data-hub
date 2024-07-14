@@ -1,11 +1,16 @@
 @use "../../css/abstracts/" as *;
 @use "sass:math";
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
 
 .carousel-products {
   &__title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
     @include screenSize(tablet) {
       flex-direction: column;
@@ -26,5 +31,38 @@
   }
   .swiper-wrapper {
     margin-bottom: 1rem;
+  }
+
+  &__arrow {
+    display: none;
+    padding: rem-calc(10);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    background-color: $color-yellow;
+    border-radius: 50%;
+    z-index: 200;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition-property: opacity display;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+
+    & img {
+      width: rem-calc(30);
+    }
+  }
+
+  &:hover {
+    .carousel-products__arrow {
+      display: block;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
   }
 }

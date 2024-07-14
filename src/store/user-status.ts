@@ -1,13 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { User } from "../data/data";
 
 const userStatusSlice = createSlice({
   name: "status",
   initialState: {
-    userstatus: false,
+    user: JSON.parse(localStorage.getItem("user") || "{}") as User,
   },
   reducers: {
-    updateStatus(state) {
-      state.userstatus = !state.userstatus;
+    updateUser(state, action: PayloadAction<User>) {
+      const user = { ...state.user, ...action.payload };
+      localStorage.setItem("user", JSON.stringify(user));
     },
   },
 });

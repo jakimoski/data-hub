@@ -1,4 +1,36 @@
-// import * from "../assets/partners-image/shops/"
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  favorites?: Product[];
+  visited?: Product[];
+  watching?: Product[];
+  userList?: UserList[];
+};
+
+export type UserList = {
+  id: string;
+  author: string;
+  name: string;
+  slug: string;
+  title?: string;
+  description?: string;
+  creationDate: Date;
+  changedDate: Date;
+  products: Product[];
+};
+
+export type PriceWatchActions = {
+  id: string;
+  productId: number;
+  creationDate: Date;
+  updateDate: Date;
+  currentPrice: number;
+  priceAtCreation: number;
+  mustBeInStock: boolean;
+  excludedMerchantIds: number[];
+};
 
 export type TSubCategories = {
   name: string;
@@ -35,6 +67,12 @@ export type Product = {
     price: number;
     month: string;
   }[];
+};
+
+export type ShopPartner = {
+  image: string;
+  title: string;
+  url: string;
 };
 
 export const categories = [
@@ -740,50 +778,44 @@ export const products: Product[] = [
   },
 ];
 
-export interface ShopPartner {
-  image: string;
-  title: string;
-  url: string;
-}
-
 export const partners: ShopPartner[] = [
   {
-    image: "./partners-image/shops/anhoch.png",
+    image: "src/assets/partners-image/shops/anhoch.png",
     title: "Анхоч",
     url: "https://www.anhoch.com/",
   },
   {
-    image: "./partners-image/shops/brikolaz.png",
+    image: "src/assets/partners-image/shops/brikolaz.png",
     title: "Г-дин. Бриколаж",
     url: "https://www.instagram.com/mr.bricolage_macedonia/",
   },
   {
-    image: "./partners-image/shops/krusel.png",
+    image: "src/assets/partners-image/shops/krusel.png",
     title: "Крусел",
     url: "https://www.krusel.mk/",
   },
   {
-    image: "./partners-image/shops/mebelVi.png",
+    image: "src/assets/partners-image/shops/mebelVi.png",
     title: "Мебел-Ви",
     url: "https://www.mebel-vi.com/",
   },
   {
-    image: "./partners-image/shops/merkur.png",
+    image: "src/assets/partners-image/shops/merkur.png",
     title: "Меркур",
     url: "https://merkurmak.mk/",
   },
   {
-    image: "./partners-image/shops/neptun.png",
+    image: "src/assets/partners-image/shops/neptun.png",
     title: "Нептун",
     url: "https://www.neptun.mk/",
   },
   {
-    image: "./partners-image/shops/setec.png",
+    image: "src/assets/partners-image/shops/setec.png",
     title: "Сетек",
     url: "https://setec.mk/",
   },
   {
-    image: "./partners-image/shops/tehnomarket.png",
+    image: "src/assets/partners-image/shops/tehnomarket.png",
     title: "Техномаркет",
     url: "https://tehnomarket.com.mk/",
   },

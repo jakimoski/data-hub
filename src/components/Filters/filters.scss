@@ -154,3 +154,37 @@
     }
   }
 }
+
+.filter-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: $color-white;
+  border: 1px solid $color-yellow;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+  &__input {
+    display: inline-block;
+    width: 100%;
+    padding: rem-calc(10) rem-calc(30);
+    border: none;
+    outline: none;
+    font-size: rem-calc(16);
+    &::placeholder {
+      color: $color-dark-gray;
+      font-family: "Inter", sans-serif;
+      font-size: rem-calc(16);
+      font-weight: 400;
+    }
+  }
+}

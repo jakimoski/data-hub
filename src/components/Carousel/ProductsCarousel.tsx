@@ -2,7 +2,8 @@ import ProductCard from "../ProductCard/ProductCard";
 import { Product } from "../../data/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import RightLogo from "../../assets/icons/Arrow-right.png";
-import { Pagination } from "swiper/modules";
+import { A11y, Navigation, Pagination } from "swiper/modules";
+import ArrowRight from "../../assets/icons/right-arrow.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -26,10 +27,12 @@ export default function Carousel({ products, title, slidesToShow }: Props) {
         </MainButton>
       </div>
       <Swiper
+        navigation={{
+          nextEl: ".carousel-products__arrow",
+          prevEl: "",
+        }}
         spaceBetween={0}
-        modules={[Pagination]}
-        // slidesPerView={"auto"}
-        slidesPerGroup={2}
+        modules={[Pagination, Navigation, A11y]}
         pagination={{
           clickable: true,
         }}
@@ -89,6 +92,9 @@ export default function Carousel({ products, title, slidesToShow }: Props) {
               <ProductCard product={product} />
             </SwiperSlide>
           ))}
+        <button className="carousel-products__arrow">
+          <img src={ArrowRight} alt="right" />
+        </button>
       </Swiper>
     </section>
   );

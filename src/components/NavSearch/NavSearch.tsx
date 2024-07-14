@@ -4,7 +4,11 @@ import { Product, products } from "../../data/data";
 import { truncateText } from "../../utils/helpers";
 import { Link } from "react-router-dom";
 
-export default function NavSearch() {
+interface NavSearchProps {
+  hero: boolean;
+}
+
+export default function NavSearch({ hero }: NavSearchProps) {
   const [showModal, setShowModal] = useState(false);
   const searchForm = useRef<HTMLFormElement>(null);
   const [searchValue, setSearchValue] = useState("");
@@ -91,7 +95,7 @@ export default function NavSearch() {
           </svg>
         </button>
         {searchValue && searchResult.length > 0 ? (
-          <div className="nav-search-bar__list">
+          <div className={`nav-search-bar__list ${hero ? "hero-search" : ""}`}>
             <ul>
               {searchResult.map((product) => (
                 <li key={product.id}>

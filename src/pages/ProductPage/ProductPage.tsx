@@ -3,6 +3,7 @@ import MainProductDetails from "../../components/MainProductDetails/MainProductD
 
 import { products } from "../../data/data";
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
+import VisitedProduct from "../../components/VisitedProduct/VisitedProduct";
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
@@ -20,6 +21,7 @@ export default function ProductPage() {
     <main className="grid-page-aside">
       <section className="product-page--product">
         <MainProductDetails product={product} />
+        <VisitedProduct product={product} />
       </section>
       <section className="product-page--aside">
         <AsideBanner />

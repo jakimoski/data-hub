@@ -5,7 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: fit-content;
+  // width: fit-content;
   background-color: $color-white;
   border: 1px solid $color-yellow;
   border-radius: 100px;
@@ -121,5 +121,10 @@
     & a {
       color: $color-black;
     }
+  }
+
+  .hero-search {
+    position: absolute;
+    top: 105%;
   }
 }

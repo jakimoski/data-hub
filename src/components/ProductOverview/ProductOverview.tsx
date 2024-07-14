@@ -4,22 +4,20 @@ import MapComponent from "../MapComponent/MapComponent";
 import Modal from "../ModalComponent/Modal";
 import { useState } from "react";
 import ProductImages from "./ProductImages";
-import dropsIcon from "../../assets/icons/drops.png";
-import sizeIcon from "../../assets/icons/size.png";
-import pinIcon from "../../assets/icons/pin.png";
 
 function ProductOverview({ product }: { product: Product }) {
   const [showModal, setShowModal] = useState(false);
 
-  const totalStars = product?.reviews?.reduce(
-    (acc, review) => acc + review.stars,
-    0
-  );
+  // const totalStars = product?.reviews?.reduce(
+  //   (acc, review) => acc + review.stars,
+  //   0
+  // );
 
-  const averageStars =
-    product.reviews && product.reviews.length > 0
-      ? totalStars ?? 0 / product.reviews.length
-      : 0;
+  // const averageStars =
+  //   product.reviews && product.reviews.length > 0
+  //     ? totalStars ?? 0 / product.reviews.length
+  //     : 0;
+
   return (
     <div className="product-overview">
       <ProductImages product={product} />
@@ -29,7 +27,7 @@ function ProductOverview({ product }: { product: Product }) {
           {product.productName}
         </h1>
         <div className="product-overview__reviews">
-          <div className="product-overview__reviews__star">
+          {/* <div className="product-overview__reviews__star">
             <svg
               width="20"
               height="20"
@@ -43,7 +41,7 @@ function ProductOverview({ product }: { product: Product }) {
               />
             </svg>
             {averageStars}
-          </div>
+          </div> */}
           <button className="product-overview__reviews__btn">Оцени</button>
           <button className="product-overview__reviews__btn">Спореди</button>
           <button className="product-overview__reviews__btn">
@@ -58,18 +56,18 @@ function ProductOverview({ product }: { product: Product }) {
         </p>
         <div className="product-overview__customize">
           <button className="product-overview__customize__btn">
-            <img src={dropsIcon} alt="color-btn" />
+            <img src="../../../src/assets/icons/drops.png" alt="" />
             Боја
           </button>
           <button className="product-overview__customize__btn">
-            <img src={sizeIcon} alt="size-btn" />
+            <img src="../../../src/assets/icons/size.png" alt="" />
             Големина
           </button>
           <button
             onClick={() => setShowModal(true)}
             className="product-overview__customize__btn"
           >
-            <img src={pinIcon} alt="pin-btn" />
+            <img src="../../../src/assets/icons/pin.png" alt="" />
             Близу до тебе
           </button>
           {showModal &&

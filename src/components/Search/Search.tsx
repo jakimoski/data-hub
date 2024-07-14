@@ -1,15 +1,71 @@
-export default function Search({
-  searchHandler,
-}: {
-  searchHandler: (e: React.FormEvent<HTMLFormElement>) => void;
-}) {
+import { useCallback, useEffect, useRef, useState } from "react";
+import OverlayModal from "../ModalComponent/OverlayModal";
+import { Product, products } from "../../data/data";
+import { truncateText } from "../../utils/helpers";
+import { Link } from "react-router-dom";
+
+export default function Search() {
+  const [showModal, setShowModal] = useState(false);
+  const searchForm = useRef<HTMLFormElement>(null);
+  const [searchValue, setSearchValue] = useState("");
+  const [searchResult, setSearchResult] = useState<Product[]>([]);
+
+  const handleClick = () => {
+    setShowModal(true);
+  };
+
+  const updateSearchResult = useCallback(() => {
+    setSearchResult(
+      products
+        .filter((product) =>
+          product.productName.toLowerCase().includes(searchValue.toLowerCase())
+        )
+        .slice(0, 15)
+    );
+  }, [searchValue]);
+
+  const handleProductClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+    setSearchValue("");
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    searchValue && updateSearchResult();
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        event.target instanceof HTMLElement &&
+        searchForm.current &&
+        !searchForm.current.contains(event.target)
+      ) {
+        setShowModal(false);
+        setSearchValue("");
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [searchValue, updateSearchResult]);
   return (
     <form
-      className="search-bar"
-      onSubmit={(e: React.FormEvent<HTMLFormElement>) => searchHandler(e)}
+      ref={searchForm}
+      className="nav-search-bar"
+      onClick={handleClick}
+      style={{ zIndex: showModal ? 9999 : 9 }}
     >
+      {showModal && <OverlayModal onClose={() => setShowModal(false)} />}
       <div className="input-wrapper">
-        <input type="text" className="search-input" placeholder="Пребарај" />
+        <input
+          onChange={(e) => setSearchValue(e.target.value)}
+          type="text"
+          className="search-input"
+          placeholder="Пребарај"
+          value={searchValue}
+        />
         <button type="submit" className="search-button">
           <svg
             width="20"
@@ -34,6 +90,22 @@ export default function Search({
           </svg>
         </button>
       </div>
+      {searchValue && searchResult.length > 0 && (
+        <div className={`nav-search-bar__list hero-search`}>
+          <ul>
+            {searchResult.map((product) => (
+              <li key={product.id}>
+                <Link
+                  to={`/product/${product.productName}`}
+                  onClick={handleProductClick}
+                >
+                  {truncateText(product.productName, 30)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </form>
   );
 }

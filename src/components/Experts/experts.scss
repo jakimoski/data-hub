@@ -1,0 +1,11 @@
+@use "../../css/abstracts/" as *;
+@use "sass:math";
+
+.expert-card {
+  & h4 {
+    margin-block: 0.5 rem;
+  }
+  & p {
+    font-size: 14px;
+  }
+}

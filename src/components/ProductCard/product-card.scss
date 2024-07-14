@@ -140,11 +140,62 @@
     text-decoration: underline;
   }
 
-  // &__image-card {
-  //   object-fit: fill;
-  //   aspect-ratio: 1/1;
-  //   margin: auto;
-  // }
+  &--small {
+    background-color: $color-gray;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px;
+    // border-bottom: 1px dotted $color-black;
+    @include screenSize(laptop) {
+      margin: 10px;
+    }
+
+    &__link {
+      color: $color-black;
+      background-color: $color-white;
+      display: flex;
+      border-radius: 10px;
+      overflow: hidden;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__container {
+      flex: 1;
+    }
+
+    &__image-wrapper {
+      overflow: hidden;
+      background-color: $color-white;
+    }
+
+    &__image {
+      width: rem-calc(70);
+      height: rem-calc(70);
+      object-fit: cover;
+      @include screenSize(laptop) {
+        height: rem-calc(50);
+      }
+    }
+
+    &__name {
+      font-size: rem-calc(15);
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      margin-bottom: 5px;
+    }
+
+    &__price {
+      font-size: rem-calc(14);
+      font-weight: bold;
+    }
+
+    &__stores {
+      font-size: 12px;
+    }
+  }
 }
 
 .small {
@@ -152,10 +203,6 @@
   text-decoration: line-through;
   font-size: $font-size-small;
 }
-// .d-flex {
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .slick-lis {
   width: 100%;

@@ -3,8 +3,6 @@ import { Product, products } from "../../data/data";
 import Filters from "../../components/Filters/Filters";
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
 import { useParams } from "react-router-dom";
-
-import ArrowIcon from "../../assets/icons/Arrow-top.png";
 import MainButton from "../../components/MainButton/MainButton";
 import Dropdown from "../../components/DropdownComponent/Dropdown";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
@@ -93,11 +91,6 @@ export default function ProductListing() {
                 <ProductCard key={product?.id} product={product} />
               ))}
           </div>
-        </div>
-        <div className="product-listing__bottom div-container">
-          <MainButton rightLogo={ArrowIcon} variant="btn--lg">
-            Омиленo
-          </MainButton>
         </div>
       </section>
 

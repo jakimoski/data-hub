@@ -81,7 +81,6 @@ export default function Footer() {
         </div>
 
         <div className="social-media">
-          <p>loremIpsum</p>
           <div className="social">
             <Link to={"/"}>
               <img src={Insta} alt="Instagram " />

@@ -59,8 +59,12 @@ export default function ProductCard({ product }: ProductCardProps) {
     setIsWatching((prev) => !prev);
   }
 
-  // const toMkd = (price: number) =>
-  //   price.toLocaleString("mk-MK", { style: "currency", currency: "MKD" });
+  const toMkd = (price: number) =>
+    price.toLocaleString("mk-MK", {
+      style: "currency",
+      currency: "MKD",
+      currencyDisplay: "code",
+    });
 
   function calculateDiscountPercentage(
     regularPrice: number,
@@ -124,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         <div className="product-card__container">
           {product.discountedPrice > 0 && (
-            <p className="small">{product.regularPrice} ден.</p>
+            <p className="small">{toMkd(product.regularPrice)} </p>
           )}
           <div className="d-flex">
             <div>

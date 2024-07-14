@@ -55,9 +55,14 @@
   }
 
   @if $breakpoint == tablet {
-    @media only screen and (max-width: 48em) {
+    @media only screen and (max-width: 56em) {
       @content;
-    } //768px
+    } //896px
+  }
+  @if $breakpoint == tablet-helper {
+    @media only screen and (max-width: 56em) {
+      @content;
+    } //896px
   }
 
   @if $breakpoint == laptop {
@@ -101,10 +106,10 @@ $font-size-map: (
 );
 // FONT LINE HEIGHT MAP
 $font-line-height-map: (
-  xl: 1.7,
-  lg: 1.6,
+  xl: 1.1,
+  lg: 1.2,
   md: 1.5,
-  sm: 1.2,
+  sm: 1.5,
 );
 // FONT WEIGHT MAP
 $font-weight-map: (
@@ -158,7 +163,7 @@ $font-size-line-height-map: (
 }
 // Main headings - H2
 @mixin heading-2 {
-  @include typography(xl-3, bold);
+  @include typography(xl-2, bold);
   @include screenSize(phone) {
     @include typography(xl, bold);
   }
@@ -215,14 +220,11 @@ $font-size-line-height-map: (
 
 // Product Title
 @mixin product-title {
-  @include typography(xl-3, bold);
+  @include typography(xl-2, bold);
   @include screenSize(desktop-helper) {
-    @include typography(xl-2, bold);
-  }
-  @include screenSize(laptop) {
     @include typography(xl-1, bold);
   }
-  @include screenSize(phone) {
+  @include screenSize(laptop) {
     @include typography(xl, bold);
   }
 }

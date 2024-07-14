@@ -24,11 +24,7 @@
   }
 
   &__sort {
-    margin-left: $gutter-s;
     margin-top: $gutter-base;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     @include screenSize(desktop-helper) {
       flex-direction: column;

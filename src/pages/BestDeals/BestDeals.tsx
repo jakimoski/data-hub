@@ -4,7 +4,6 @@ import Filters from "../../components/Filters/Filters";
 import MainButton from "../../components/MainButton/MainButton";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Product, products } from "../../data/data";
-import ArrowIcon from "../../assets/icons/Arrow-top.png";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import { useEffect, useMemo, useState } from "react";
 
@@ -70,7 +69,6 @@ export default function BestDeals() {
               />
             </div>
           </div>
-          <div className="product-listing__sort"></div>
         </div>
         <section className="product-listing__products">
           <div className="product-listing__products-filters">
@@ -83,11 +81,6 @@ export default function BestDeals() {
               ))}
           </div>
         </section>
-        <div className="product-listing__bottom div-container">
-          <MainButton rightLogo={ArrowIcon} variant="btn--lg">
-            Омиленo
-          </MainButton>
-        </div>
       </section>
 
       <section className="product-listing__aside">

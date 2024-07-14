@@ -6,9 +6,29 @@
   border-radius: 16px;
   margin-top: $gutter-base;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
 
-.merkur {
-  //   background-color: #ffde00;
-  //   color: #17a94e;
+  &__wrapper {
+    padding: 12px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__product {
+    color: #0075ff;
+
+    margin-top: 8px;
+  }
+
+  &__info {
+    color: $color-dark-gray;
+    display: flex;
+    gap: 1rem;
+  }
 }

@@ -1,7 +1,7 @@
 export default function ProductInformation() {
   return (
     <div className="product-information">
-      <h2 className="page-title">Информации за прдуктот</h2>
+      <h2 className="page-title">Информации за продуктот</h2>
       <h4>
         Најниската цена за Nutribullet Pro е 3000ден. Ова е најдобрата цена во
         моментов меѓу 4 продавници.

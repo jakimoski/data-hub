@@ -8,11 +8,37 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  scroll-snap-stop: normal;
 }
 
 html {
   box-sizing: border-box;
   font-size: 100%;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.6);
+    background-color: $color-gray;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $color-yellow;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: lighten($color-yellow, 10%);
+  }
 
   @include screenSize(big-desktop) {
     font-size: 110%; // Big Desktop sizings (1800PX +)
@@ -26,12 +52,12 @@ body {
 }
 
 main {
-  overflow: hidden;
+  // overflow: hidden;
   padding-inline: $gutter-l;
   margin: 0 auto;
   max-width: 1680px;
   @include screenSize(laptop) {
-    padding-inline: $gutter-base;
+    padding-inline: $gutter-s;
   }
 }
 
@@ -63,20 +89,10 @@ div {
   unicode-bidi: isolate;
 }
 
-// .swiper {
-//   width: 100% !important;
-//   height: 100%;
-// }
 .swiper-wrapper {
   width: 100% !important;
   height: 100% !important;
 }
-
-// .swiper-slide {
-//   /* Center slide text vertically */
-//   display: flex;
-//   justify-content: center;
-// }
 
 .swiper-slide {
   height: auto !important;

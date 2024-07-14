@@ -10,4 +10,24 @@
     justify-content: center;
     padding-bottom: 0;
   }
+
+  &__arrow {
+    display: none;
+    padding: rem-calc(5);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-70%);
+    border-radius: 50%;
+    z-index: 200;
+
+    & img {
+      width: rem-calc(20);
+    }
+
+    @include screenSize(tablet) {
+      display: block;
+    }
+  }
 }

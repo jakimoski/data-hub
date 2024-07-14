@@ -2,20 +2,19 @@ import { partners, products } from "../../data/data";
 import Carousel from "../../components/Carousel/ProductsCarousel";
 import MainButton from "../../components/MainButton/MainButton";
 import AsideBanner from "../../components/AsideBanner/AsideBanner";
-import ArrowIcon from "../../assets/icons/Arrow-top.png";
 import ShopsCarousel from "../../components/Carousel/ShopsCarousel";
 import CatalogsCarousel from "../../components/Carousel/CatalogsCarousel";
 
 export default function Catalogs() {
   const catalogs = [
-    "./ads-images/Rectangle 127.png",
-    "./ads-images/Rectangle 128.png",
-    "./ads-images/Rectangle 129.png",
-    "./ads-images/Rectangle 130.png",
-    "./ads-images/Rectangle 127.png",
-    "./ads-images/Rectangle 128.png",
-    "./ads-images/Rectangle 129.png",
-    "./ads-images/Rectangle 130.png",
+    "src/assets/partners-image/Rectangle 127.png",
+    "src/assets/partners-image/Rectangle 128.png",
+    "src/assets/partners-image/Rectangle 129.png",
+    "src/assets/partners-image/Rectangle 130.png",
+    "src/assets/partners-image/Rectangle 127.png",
+    "src/assets/partners-image/Rectangle 128.png",
+    "src/assets/partners-image/Rectangle 129.png",
+    "src/assets/partners-image/Rectangle 130.png",
   ];
 
   return (
@@ -49,11 +48,6 @@ export default function Catalogs() {
             slidesToShow={5}
             products={products}
           />
-        </div>
-        <div className="catalogs-page__bottom div-container">
-          <MainButton rightLogo={ArrowIcon} variant="btn--lg">
-            Омиленo
-          </MainButton>
         </div>
       </section>
       <section className="catalogs-page__aside">

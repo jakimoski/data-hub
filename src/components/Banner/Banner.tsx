@@ -11,11 +11,6 @@ export default function Banner({
   description,
   backgroundImage,
 }: BannerProps) {
-  const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("search");
-  };
-
   return (
     <div
       className="banner"
@@ -25,7 +20,7 @@ export default function Banner({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <Search searchHandler={searchHandler} />
+      <Search />
     </div>
   );
 }

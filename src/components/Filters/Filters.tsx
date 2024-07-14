@@ -1,13 +1,8 @@
-import Search from "../Search/Search";
 import FilterCheckbox from "./FilterCheckbox";
 import FilterRange from "./FilterRange";
+import FilterSearch from "./FilterSearch";
 
 export default function Filters() {
-  const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("search");
-  };
-
   return (
     <div className="filters">
       <h2 className="filters__title page-title">Филтри</h2>
@@ -34,7 +29,7 @@ export default function Filters() {
       <div className="filters__category">
         <h3 className="filters__category__title">Категорија</h3>
         <div>
-          <Search searchHandler={searchHandler} />
+          <FilterSearch />
           <FilterCheckbox title="Обувки" />
           <FilterCheckbox title="Бела техника" />
           <FilterCheckbox title="Облека" />
@@ -46,7 +41,7 @@ export default function Filters() {
       <div className="filters__category">
         <h3 className="filters__category__title">Бренд</h3>
         <div>
-          <Search searchHandler={searchHandler} />
+          <FilterSearch />
           <FilterCheckbox title="Apple" />
           <FilterCheckbox title="Sony" />
           <FilterCheckbox title="Samsung" />

@@ -9,7 +9,7 @@ export default function ErrorPage() {
       <Navbar />
       <main>
         <Section>
-          <Link className="btn btn--cuisine" to={"/"}>
+          <Link className="btn btn--cuisine" to={"/data-hub"}>
             Go to Homepage
           </Link>
         </Section>

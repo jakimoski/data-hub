@@ -1,17 +1,26 @@
-export default function Ad() {
+import { truncateText } from "../../utils/helpers";
+
+type Props = {
+  price: number;
+  name: string;
+};
+
+export default function Ad({ price, name }: Props) {
   return (
-    <div className="container">
-      <div className="add-banner">
-        <div className="left-part">
+    <div className="ad-container">
+      <div className="ad-container__banner">
+        <div className="ad-container__left">
           <p>AD</p>
         </div>
-        <div className="right-part">
+        <div className="ad-container__right">
           <div>
             <h4>Нептун</h4>
-            <p className="blue-text">Nutribullet PRO 900W</p>
+            <p className="blue-text">{truncateText(name, 20)}</p>
           </div>
 
-          <p className="text-yellow">0000 ден.</p>
+          <p>
+            <span className="ad-container__price">{price} ден.</span>
+          </p>
         </div>
       </div>
     </div>

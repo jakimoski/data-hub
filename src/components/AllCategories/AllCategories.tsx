@@ -27,10 +27,10 @@ export default function AllCategories() {
     });
   }, [currentCategory]);
 
-  const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("search");
-  };
+  // const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("search");
+  // };
 
   return (
     <motion.div
@@ -42,7 +42,7 @@ export default function AllCategories() {
     >
       <div className="categories__all">
         <div className="categories__search">
-          <Search searchHandler={searchHandler} />
+          <Search />
         </div>
         {categories.map((category) => (
           <span

@@ -1,18 +1,17 @@
 @use "../../css/abstracts/" as *;
 @use "sass:math";
 
-.container {
+.ad-container {
   background: #fff0d4;
   border-radius: 16px;
   margin-top: $gutter-base;
-}
-.add-banner {
-  display: flex;
-  flex-direction: row;
-  //   padding: 12px 24px;
 
-  //   align-items: flex-end;
-  .left-part {
+  &__banner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left {
     border-radius: 16px 0 0 16px;
     background-color: $color-yellow;
     color: $color-white;
@@ -27,7 +26,7 @@
     }
   }
 
-  .right-part {
+  &__right {
     padding: 12px 24px;
     width: 100%;
     display: flex;
@@ -36,11 +35,19 @@
     align-items: flex-end;
   }
 
-  .blue-text {
-    color: #0075ff;
+  &__shipping {
+    color: $color-dark-gray;
   }
 
-  .text-yellow {
+  &__price {
     color: $color-yellow;
   }
+}
+
+.blue-text {
+  color: #0075ff;
+}
+
+.text-yellow {
+  color: $color-yellow;
 }

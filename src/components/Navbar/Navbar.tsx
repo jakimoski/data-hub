@@ -3,16 +3,19 @@ import Logo from "../../assets/icons/Logo 1 2.svg";
 import { useEffect, useState } from "react";
 import SignIn from "../SignIn/SignIn";
 import AllCategories from "../AllCategories/AllCategories";
-
 import serchImg from "../../assets/icons/streamline_magnifying-glass-solid.png";
 import Modal from "../ModalComponent/Modal";
 import { createPortal } from "react-dom";
 import MainButton from "../MainButton/MainButton";
 import NavSearch from "../NavSearch/NavSearch";
+import { User } from "../../data/data";
+import userImg from "../../assets/backgrounds/profile.png";
 
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem("user") || "{}") as User;
 
   const location = useLocation();
 
@@ -21,11 +24,6 @@ export default function Navbar() {
   useEffect(() => {
     setIsVisible(false);
   }, [location]);
-
-  // const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   console.log("search");
-  // };
 
   return (
     <>
@@ -87,16 +85,22 @@ export default function Navbar() {
 
             {location.pathname === "/" ? null : (
               <div id="serach-nav">
-                <NavSearch />
+                <NavSearch hero={false} />
               </div>
             )}
 
-            <MainButton
-              style={{ marginLeft: "auto" }}
-              handler={() => setShowModal(true)}
-            >
-              Најавете се
-            </MainButton>
+            {user.id ? (
+              <NavLink to="/data-hub/my-profile">
+                <img className="nav__user" src={userImg} alt="user" />
+              </NavLink>
+            ) : (
+              <MainButton
+                style={{ marginLeft: "auto" }}
+                handler={() => setShowModal(true)}
+              >
+                Најавете се
+              </MainButton>
+            )}
           </nav>
         </div>
       </header>

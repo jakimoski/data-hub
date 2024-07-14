@@ -4,16 +4,21 @@ import notification from "../../assets/icons/bell.png";
 import settingsIcon from "../../assets/icons/settings.png";
 import logoutIcon from "../../assets/icons/ph_arrow-up-bold.png";
 import { useState } from "react";
-import { products } from "../../data/data";
 import Carousel from "../../components/Carousel/ProductsCarousel";
 import { useNavigate } from "react-router-dom";
 
 export default function MyProfile() {
-  const [currentItem, setCurrentItem] = useState("favorite");
+  const [cuurentItem, setCurrentitem] = useState("favorite");
+
+  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  const watchedProducts = JSON.parse(
+    localStorage.getItem("preicewatch") || "[]"
+  );
 
   const navigate = useNavigate();
 
   const logOutHandler = () => {
+    localStorage.removeItem("user");
     navigate("/");
   };
 
@@ -25,19 +30,19 @@ export default function MyProfile() {
         <div className="profile-page__actions__wrapper">
           <button
             className="button profile-page-btn"
-            onClick={() => setCurrentItem("favorite")}
+            onClick={() => setCurrentitem("favorite")}
           >
             <img src={favoriteImg} alt="Омилено" /> Омилено
           </button>
           <button
             className="button profile-page-btn--notifications"
-            onClick={() => setCurrentItem("notifications")}
+            onClick={() => setCurrentitem("notifications")}
           >
             <img src={notification} alt="Известување" /> Известување на цена
           </button>
           <button
             className=" button profile-page-btn--log-settings"
-            onClick={() => setCurrentItem("settings")}
+            onClick={() => setCurrentitem("settings")}
           >
             <img src={settingsIcon} alt="Поставувања" /> Поставувања
           </button>
@@ -51,27 +56,19 @@ export default function MyProfile() {
       </section>
       <section className="profile-page__items">
         <div className="profile-page__items__wrapper">
-          {currentItem && currentItem === "favorite" ? (
+          {cuurentItem && cuurentItem === "favorite" ? (
             <>
               <h1>Омилено</h1>
-              <Carousel
-                title="Зачувани продукти"
-                slidesToShow={5}
-                products={products}
-              />
+              <Carousel slidesToShow={5} products={favorites} />
             </>
           ) : null}
-          {currentItem && currentItem === "notifications" ? (
+          {cuurentItem && cuurentItem === "notifications" ? (
             <>
               <h1>Известувања</h1>
-              <Carousel
-                title="Зачувани продукти"
-                slidesToShow={5}
-                products={products}
-              />
+              <Carousel slidesToShow={5} products={watchedProducts} />
             </>
           ) : null}
-          {currentItem && currentItem === "settings" ? <h1>Поставки</h1> : null}
+          {cuurentItem && cuurentItem === "settings" ? <h1>Поставки</h1> : null}
         </div>
       </section>
     </main>

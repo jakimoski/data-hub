@@ -2,7 +2,7 @@ import { useState } from "react";
 import video from "../../assets/icons/-4117-47af-8b14-2be80717c66b.mp4";
 import facebook from "../../assets/icons/ic_baseline-facebook.png";
 import google from "../../assets/icons/Vector.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [isRegister, setIsRegister] = useState(false);
@@ -11,11 +11,22 @@ export default function SignIn() {
     setIsRegister((prev) => !prev);
   };
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const redirectHandler = () => {
-  //   navigate("/data-hub/my-profile");
-  // };
+  const redirectHandler = () => {
+    const user = {
+      id: "1",
+      name: "John Doe",
+      email: "john@doe.com",
+      password: "123456",
+      favorites: [],
+      visited: [],
+      watching: [],
+      userList: [],
+    };
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/my-profile");
+  };
 
   return (
     <div className="sign-in">
@@ -60,12 +71,12 @@ export default function SignIn() {
               Се согласувам со условите и правилата за продажба
             </label>
           </div>
-          <Link
-            to="/data-hub/my-profile"
+          <button
+            onClick={redirectHandler}
             className="social-btn social-btn__submit"
           >
             Продолжете со Е-маил
-          </Link>
+          </button>
         </form>
         <p>
           {isRegister ? "Сеуште немаш профил?" : "Веќе имаш профил?"}

@@ -11,9 +11,8 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "all sub sub sub sub sub";
-
   padding-bottom: 3rem;
-  top: 80px;
+  top: 85px;
   left: 0;
   overflow-y: auto;
 
@@ -41,7 +40,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 5rem;
+    // padding-top: 5rem;
     border-right: 1px solid $color-yellow;
 
     @include screenSize(tablet) {

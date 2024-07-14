@@ -1,8 +1,8 @@
 import FilterHomeCard from "../FilterHomeCard/FilterHomeCard";
 import { categories } from "../../data/data";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import ArrowRight from "../../assets/icons/right-arrow.png";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import "swiper/css/pagination";
@@ -13,6 +13,10 @@ export default function FiltersHome() {
       <Swiper
         spaceBetween={10}
         modules={[Pagination, Autoplay]}
+        navigation={{
+          nextEl: ".carousel-products__arrow",
+          prevEl: "",
+        }}
         slidesPerGroup={2}
         breakpoints={{
           280: {
@@ -41,6 +45,9 @@ export default function FiltersHome() {
             </SwiperSlide>
           ))}
         </div>
+        <button className="filter-cards__arrow">
+          <img src={ArrowRight} alt="right" />
+        </button>
       </Swiper>
     </div>
   );

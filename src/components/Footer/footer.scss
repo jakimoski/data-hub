@@ -5,13 +5,13 @@
   width: 100%;
   background-color: $bg-dark;
   color: $color-white;
-
+  padding-block: $gutter-s;
   .wrapper {
     @extend %wrap;
 
     .newsletter {
       text-align: center;
-      padding-bottom: ($gutter-base * 2);
+      padding-block: ($gutter-base * 2);
 
       p {
         margin-bottom: $gutter-base;
@@ -21,8 +21,8 @@
     .input-wrapper {
       position: relative;
       display: inline-flex;
-      width: 60%;
-      padding: ($gutter-base * 0.5) ($gutter-base);
+      width: 40%;
+      padding: ($gutter-s * 0.5) ($gutter-base);
 
       @include screenSize(tablet) {
         width: 100%;
@@ -89,9 +89,6 @@
       }
     }
 
-    // Se mi izgleda ogromno, ne mozam da se snajdam so
-    // tipografijata
-
     h3 {
       font-size: $heading-size-tiny;
     }
@@ -124,8 +121,8 @@
 
     .social-media {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
       padding-top: $gutter-base;
       @include screenSize(tablet) {
         flex-direction: column-reverse;

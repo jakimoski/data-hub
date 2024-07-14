@@ -28,7 +28,11 @@ export default function FilterHomeCard({ category, classes }: Props) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img src={getImgUrl(iconUrl!)} alt="" className="filter-icon" />
+      <img
+        src={getImgUrl(iconUrl!)}
+        alt="filter icon"
+        className="filter-icon"
+      />
 
       <p>{categoryName}</p>
     </Link>

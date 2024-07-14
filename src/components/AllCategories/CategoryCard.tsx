@@ -23,7 +23,7 @@ export default function CategoryCard({
           alt=""
         />
         <Link
-          to={`/data-hub/category/${categoryUrl}`}
+          to={`/category/${categoryUrl}`}
           className="single-category-item__title"
         >
           {name}

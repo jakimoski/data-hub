@@ -2,12 +2,9 @@
 
 .profile-page {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "actions items items items";
-
-  @include screenSize(tablet) {
-    flex-direction: column;
-  }
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "actions items items items items";
+  overflow: hidden;
 
   &__actions {
     grid-area: actions;
@@ -21,17 +18,18 @@
   }
 
   &__title {
+    margin-block: 1rem;
     text-align: center;
     @include title-2;
   }
 
   &__img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     margin: 10px auto;
-    @include screenSize(laptop) {
-      width: 150px;
-      height: 150px;
+    @include screenSize(tablet) {
+      width: 100px;
+      height: 100px;
     }
   }
   & .button {
@@ -39,7 +37,7 @@
     width: 100%;
     gap: 1rem;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     cursor: pointer;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -49,7 +47,7 @@
     &:hover {
       background-color: $color-gray;
     }
-    @include screenSize(phone) {
+    @include screenSize(tablet) {
       flex-direction: column;
       padding: 10px;
     }
